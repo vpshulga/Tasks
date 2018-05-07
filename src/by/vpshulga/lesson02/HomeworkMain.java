@@ -1,4 +1,4 @@
-package by.vpshulga;
+package by.vpshulga.lesson02;
 
 import java.util.Scanner;
 

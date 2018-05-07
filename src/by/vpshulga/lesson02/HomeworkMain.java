@@ -7,7 +7,7 @@ public class HomeworkMain {
 
 
     public static void main(String[] args) {
-        checkWordsForEquals();
+//        checkWordsForEquals();
         chooseCorrectFormOfWordUseIfElse();
         chooseCorrectFormOfWordUseSwitch();
         System.out.println("Задача 3 год для проверки");
@@ -25,90 +25,80 @@ public class HomeworkMain {
 
     /**
      * 1. Запросить у пользователя 2 слова. Если они одинаковы - вывести "Отлично! Слова одинаковы".
-     Если они отличаются лишь регистром - "Хорошо. Почти одинаковы"
-     Если они отличаются, но одной длины - "Ну, хотя бы они одной длины"
-     Использовать методы класса String: equals(String string), equalsIgnoreCase(String string), length()
+     * Если они отличаются лишь регистром - "Хорошо. Почти одинаковы"
+     * Если они отличаются, но одной длины - "Ну, хотя бы они одной длины"
+     * Использовать методы класса String: equals(String string), equalsIgnoreCase(String string), length()
      */
-    private static void checkWordsForEquals(){
+    private static void checkWordsForEquals() {
         System.out.println("Задача 1 1-е слово:");
         String firstWord = sc.next();
         System.out.println("Задача 1 2-е слово:");
         String secondWord = sc.next();
 
 
-        if (firstWord.equals(secondWord)){
+        if (firstWord.equals(secondWord)) {
             System.out.println("Отлично! Слова одинаковы.");
-        }
-        else if (firstWord.equalsIgnoreCase(secondWord)){
+        } else if (firstWord.equalsIgnoreCase(secondWord)) {
             System.out.println("Хорошо. Почти одинаковы");
-        }
-        else if (firstWord.length() == secondWord.length()){
+        } else if (firstWord.length() == secondWord.length()) {
             System.out.println("Ну, хотя бы они одной длины");
-        }
-        else {
+        } else {
             System.out.println("Совсем разные");
         }
     }
 
     /**
      * 2. Имеется целое число, вводимое пользователем с консоли. Это число - сумма денег в рублях.
-     Вывести это число, добавив к нему слово "рубль" в правильном падеже ("рубль", "рублей", "рубля").
-     a. Использовать конструкцию if-else.
-     b. Модифицировать в switch в отдельном файле.
-
+     * Вывести это число, добавив к нему слово "рубль" в правильном падеже ("рубль", "рублей", "рубля").
+     * a. Использовать конструкцию if-else.
+     * b. Модифицировать в switch в отдельном файле.
      */
-    private static void chooseCorrectFormOfWordUseIfElse(){
+    private static void chooseCorrectFormOfWordUseIfElse() {
         System.out.println("Задача 2(if-else) кол-во рублей:");
         int countRubles = sc.nextInt();
 
-        if (countRubles % 10 == 1 && countRubles % 100 != 11){
+        if (countRubles % 10 == 1 && countRubles % 100 != 11) {
             System.out.println(countRubles + " рубль");
-        }
-        else if (countRubles % 10 > 1 && countRubles % 10 < 5 && countRubles % 100 != 12
-                && countRubles % 100 != 13 && countRubles % 100 != 14){
+        } else if (countRubles % 10 > 1 && countRubles % 10 < 5 && countRubles % 100 != 12
+                && countRubles % 100 != 13 && countRubles % 100 != 14) {
             System.out.println(countRubles + " рубля");
-        }
-        else{
+        } else {
             System.out.println(countRubles + " рублей");
         }
     }
 
-    private static void chooseCorrectFormOfWordUseSwitch(){
+    private static void chooseCorrectFormOfWordUseSwitch() {
         System.out.println("Задача 2(switch) кол-во рублей:");
         int countRubles = sc.nextInt();
         int ostatokHund = countRubles % 100;
         int ostatokTen = countRubles % 10;
 
-        switch (ostatokTen){
+        switch (ostatokTen) {
             case 1:
-                if (ostatokHund != 11){
+                if (ostatokHund != 11) {
                     System.out.println(countRubles + " рубль");
-                }
-                else{
+                } else {
                     System.out.println(countRubles + " рублей");
                 }
                 break;
             case 2:
-                if (ostatokHund != 12){
+                if (ostatokHund != 12) {
                     System.out.println(countRubles + " рубля");
-                }
-                else{
+                } else {
                     System.out.println(countRubles + " рублей");
                 }
                 break;
             case 3:
-                if (ostatokHund != 13){
+                if (ostatokHund != 13) {
                     System.out.println(countRubles + " рубля");
-                }
-                else{
+                } else {
                     System.out.println(countRubles + " рублей");
                 }
                 break;
             case 4:
-                if (ostatokHund != 14){
+                if (ostatokHund != 14) {
                     System.out.println(countRubles + " рубля");
-                }
-                else{
+                } else {
                     System.out.println(countRubles + " рублей");
                 }
                 break;
@@ -119,76 +109,69 @@ public class HomeworkMain {
 
     /**
      * 3. Написать программу, которая считывает год, введённый пользователем, и определяет, является ли этот год високосным.
-     Год считается високосным, если он делится без остатка на 4. Однако, если год также делится на 100, то этот год не високосный, за исключением годов, делящихся на 400.
-     Например:
-     1992 - високосный
-     1900 - не високосный
-     2000 - високосный
-
+     * Год считается високосным, если он делится без остатка на 4. Однако, если год также делится на 100, то этот год не високосный, за исключением годов, делящихся на 400.
+     * Например:
+     * 1992 - високосный
+     * 1900 - не високосный
+     * 2000 - високосный
+     *
      * @param year
      * @return
      */
-    static boolean checkLeapYear(int year){
-        if (year % 400 != 0 && year % 100 == 0){
+    static boolean checkLeapYear(int year) {
+        if (year % 400 != 0 && year % 100 == 0) {
             return false;
-        }
-        else return year % 4 == 0;
+        } else return year % 4 == 0;
     }
 
     /**
      * 4*. Написать программу, которая считывает число, месяц и год, введённые пользователем в виде трёх целых чисел.
-     Программа должна определять, является ли введённая дата реальной и выводить результат.
-     Использовать следующую информацию:
-     Январь, март, май, июль, август, октябрь, декабрь - 31 день
-     Апрель, июнь, сентябрь, ноябрь - 30 дней
-     Февраль - 28 дней в обычный год, 29 дней в високосный
-
+     * Программа должна определять, является ли введённая дата реальной и выводить результат.
+     * Использовать следующую информацию:
+     * Январь, март, май, июль, август, октябрь, декабрь - 31 день
+     * Апрель, июнь, сентябрь, ноябрь - 30 дней
+     * Февраль - 28 дней в обычный год, 29 дней в високосный
+     *
      * @return
      */
-    static boolean checkForLongMonth(int month){
+    static boolean checkForLongMonth(int month) {
         return month == 1 || month == 3 || month == 5 || month == 7 ||
                 month == 8 || month == 10 || month == 12;
     }
 
-    static boolean checkForShortMonth(int month){
+    static boolean checkForShortMonth(int month) {
         return month == 4 || month == 6 || month == 9 || month == 11;
     }
-    private static boolean checkDayForLongMonth(int day){
+
+    private static boolean checkDayForLongMonth(int day) {
         return day >= 1 && day <= 31;
     }
 
-    private static boolean checkDayForShortMonth(int day){
+    private static boolean checkDayForShortMonth(int day) {
         return day >= 1 && day <= 30;
     }
 
-    static boolean checkRealDate(int day, int month, int year){
+    static boolean checkRealDate(int day, int month, int year) {
 
-        boolean isLeapYear  = checkLeapYear(year);
-        if (isLeapYear){
-            if (checkForLongMonth(month)){
+        boolean isLeapYear = checkLeapYear(year);
+        if (isLeapYear) {
+            if (checkForLongMonth(month)) {
                 return checkDayForLongMonth(day);
-            }
-            else if (checkForShortMonth(month)){
+            } else if (checkForShortMonth(month)) {
                 return checkDayForShortMonth(day);
-            }
-            else if (month == 2){
+            } else if (month == 2) {
                 return day >= 1 && day <= 29;
-            }
-            else {
+            } else {
                 return false;
             }
-        }
-        else {
-            if (checkForLongMonth(month)){
+        } else {
+            if (checkForLongMonth(month)) {
                 return checkDayForLongMonth(day);
-            }
-            else if (checkForShortMonth(month)){
+            } else if (checkForShortMonth(month)) {
                 return checkDayForShortMonth(day);
-            }
-            else if (month == 2){
+            } else if (month == 2) {
                 return day >= 1 && day <= 28;
-            }
-            else{
+            } else {
                 return false;
             }
         }

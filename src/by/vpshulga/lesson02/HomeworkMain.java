@@ -13,7 +13,13 @@ public class HomeworkMain {
         System.out.println("Задача 3 год для проверки");
         int year = sc.nextInt();
         System.out.println(checkLeapYear(year));
-        System.out.println(checkRealDate());
+        System.out.println("Задача 4 день:");
+        int day = sc.nextInt();
+        System.out.println("Задача 4 месяц:");
+        int month = sc.nextInt();
+        System.out.println("Задача 4 год:");
+        int yearFourTask = sc.nextInt();
+        System.out.println(checkRealDate(day, month, yearFourTask));
 
     }
 
@@ -122,16 +128,11 @@ public class HomeworkMain {
      * @param year
      * @return
      */
-    private static boolean checkLeapYear(int year){
+    static boolean checkLeapYear(int year){
         if (year % 400 != 0 && year % 100 == 0){
             return false;
         }
-        else if (year % 4 == 0) {
-            return true;
-        }
-        else{
-            return false;
-        }
+        else return year % 4 == 0;
     }
 
     /**
@@ -144,12 +145,12 @@ public class HomeworkMain {
 
      * @return
      */
-    private static boolean checkForLongMonth(int month){
+    static boolean checkForLongMonth(int month){
         return month == 1 || month == 3 || month == 5 || month == 7 ||
                 month == 8 || month == 10 || month == 12;
     }
 
-    private static boolean checkForShortMonth(int month){
+    static boolean checkForShortMonth(int month){
         return month == 4 || month == 6 || month == 9 || month == 11;
     }
     private static boolean checkDayForLongMonth(int day){
@@ -160,13 +161,8 @@ public class HomeworkMain {
         return day >= 1 && day <= 30;
     }
 
-    private static boolean checkRealDate(){
-        System.out.println("Задача 4 день:");
-        int day = sc.nextInt();
-        System.out.println("Задача 4 месяц:");
-        int month = sc.nextInt();
-        System.out.println("Задача 4 год:");
-        int year = sc.nextInt();
+    static boolean checkRealDate(int day, int month, int year){
+
         boolean isLeapYear  = checkLeapYear(year);
         if (isLeapYear){
             if (checkForLongMonth(month)){

@@ -1,8 +1,8 @@
 package by.vpshulga.lesson03;
 
-public class Homework {
+public class HomeWorkMain {
     public static void main(String[] args) {
-        printArray();
+        printAndReverseArray.printArray();
     }
 
     /**
@@ -14,10 +14,10 @@ public class Homework {
         for (int i = 0; i < array.length; i++) {
             System.out.print(array[i] + " ");
         }
-        System.out.println("/n");
+        System.out.println("");
 
         for (int i = array.length - 1; i >= 0; i--) {
-            System.out.print(array[i]);
+            System.out.print(array[i] + " ");
         }
     }
 

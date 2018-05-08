@@ -1,6 +1,6 @@
 package by.vpshulga.lesson03;
 
-public class printAndReverseArray {
+public class PrintAndReverseArray {
     /**
      * 1. Напишите программу, которая печатает массив сначала в обычном порядке, затем в обратном.
      */
@@ -15,5 +15,6 @@ public class printAndReverseArray {
         for (int i = array.length - 1; i >= 0; i--) {
             System.out.print(array[i] + " ");
         }
+        System.out.println("");
     }
 }

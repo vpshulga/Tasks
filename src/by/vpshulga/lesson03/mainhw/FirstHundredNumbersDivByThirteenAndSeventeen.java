@@ -1,9 +1,10 @@
-package by.vpshulga.lesson03;
+package by.vpshulga.lesson03.mainhw;
 
+/**
+ * 2. Напишите программу, заносящую в массив первые 100 натуральных чисел, делящихся на 13 или на 17, и печатающую его.
+ */
 public class FirstHundredNumbersDivByThirteenAndSeventeen {
-    /**
-     * 2. Напишите программу, заносящую в массив первые 100 натуральных чисел, делящихся на 13 или на 17, и печатающую его.
-     */
+
 
     static void divisionByThirteenAndSeventeen(){
         int[] array = new int[100];
@@ -21,5 +22,6 @@ public class FirstHundredNumbersDivByThirteenAndSeventeen {
         for (int i = 0; i < array.length; i++) {
             System.out.print(array[i] + " ");
         }
+        System.out.println("");
     }
 }

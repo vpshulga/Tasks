@@ -1,4 +1,4 @@
-package by.vpshulga.lesson03;
+package by.vpshulga.lesson03.mainHW;
 
 /**
  * 5. Создать двухмерный квадратный массив, и заполнить его "бабочкой", т.е. таким образом:

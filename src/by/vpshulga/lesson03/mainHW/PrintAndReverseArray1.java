@@ -1,4 +1,4 @@
-package by.vpshulga.lesson03;
+package by.vpshulga.lesson03.mainHW;
 
 /**
  * 1. Напишите программу, которая печатает массив сначала в обычном порядке, затем в обратном.

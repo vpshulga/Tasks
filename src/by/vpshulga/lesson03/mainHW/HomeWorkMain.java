@@ -1,4 +1,4 @@
-package by.vpshulga.lesson03;
+package by.vpshulga.lesson03.mainHW;
 
 public class HomeWorkMain {
     public static void main(String[] args) {

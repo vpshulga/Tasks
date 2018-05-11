@@ -1,4 +1,4 @@
-package by.vpshulga.lesson03;
+package by.vpshulga.lesson03.mainHW;
 
 import java.util.Random;
 

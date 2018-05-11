@@ -1,4 +1,4 @@
-package by.vpshulga.lesson03.mainhw;
+package by.vpshulga.lesson03;
 
 /**
  * 6. Написать метод equals, который определяет, равны ли между собой соответствующие элементы

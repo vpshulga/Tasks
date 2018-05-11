@@ -1,4 +1,4 @@
-package by.vpshulga.lesson03.mainhw;
+package by.vpshulga.lesson03;
 
 /**
  * 10. Написать алгоритм расчета факториала , используя циклы (for и while).

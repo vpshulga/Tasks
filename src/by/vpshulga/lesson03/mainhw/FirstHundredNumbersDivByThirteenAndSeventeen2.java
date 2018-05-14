@@ -1,4 +1,4 @@
-package by.vpshulga.lesson03.mainHW;
+package by.vpshulga.lesson03.mainhw;
 
 /**
  * 2. Напишите программу, заносящую в массив первые 100 натуральных чисел, делящихся на 13 или на 17, и печатающую его.

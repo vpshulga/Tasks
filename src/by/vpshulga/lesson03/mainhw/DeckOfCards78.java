@@ -6,6 +6,9 @@ import java.util.Random;
  * 7. Написать программу, эмулирующую выдачу случайной карты из колоды в 52 карты.
  * Вывести результат в формате "Карта of Масть". Например, "AceofSpades".
  * Валет - Jack, Дама - Queen, Король - King, Туз - Ace, Червы - Hearts, Пики - Spades, Трефы - Clubs, Бубны - Diamonds
+ * <p>
+ * 8.* Написать программу, перемешивающую и печатающую список карт в колоде.
+ * Воспользоваться результатом предыдущей задачи.
  */
 public class DeckOfCards78 {
     private static String[] nominals = {"2", "3", "4", "5", "6", "7",
@@ -32,7 +35,7 @@ public class DeckOfCards78 {
         int counter = 0;
         String tmp;
         int randomIndex;
-        while (counter < 20) {
+        while (counter < 5) {
             for (int i = 0; i < array.length; i++) {
                 tmp = array[i];
                 randomIndex = random.nextInt(array.length);

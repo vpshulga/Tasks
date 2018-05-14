@@ -53,13 +53,13 @@ public class Bankomat {
                 countOfTaken50 = countOf50;
             }
             int countOfTaken20 = 0;
-            if ((totalMoney - countOfTaken100 * 100 - countOfTaken50 * 50) % 20 != 0){
-                countOfTaken20 = (totalMoney - countOfTaken100 * 100 - ((countOfTaken50 - 1) * 50 )) / 20;
+            if ((totalMoney - countOfTaken100 * 100 - countOfTaken50 * 50) % 20 != 0) {
+                countOfTaken20 = (totalMoney - countOfTaken100 * 100 - ((countOfTaken50 - 1) * 50)) / 20;
                 if (countOfTaken50 > 0) {
                     countOfTaken50 -= 1;
                 }
-            } else if ((totalMoney - countOfTaken100 * 100 - countOfTaken50 * 50) / 20 <= countOf20){
-                countOfTaken20 = (totalMoney - countOfTaken100 * 100 - (countOfTaken50 * 50 )) / 20;
+            } else if ((totalMoney - countOfTaken100 * 100 - countOfTaken50 * 50) / 20 <= countOf20) {
+                countOfTaken20 = (totalMoney - countOfTaken100 * 100 - (countOfTaken50 * 50)) / 20;
             }
 
             if (countOfTaken100 * 100 + countOfTaken50 * 50 + countOfTaken20 * 20 == totalMoney) {

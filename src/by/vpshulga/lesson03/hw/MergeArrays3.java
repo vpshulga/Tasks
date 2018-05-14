@@ -12,17 +12,16 @@ public class MergeArrays3 {
                 i++;
                 resultArray[i] = secondArray[j];
             }
-            for (int i = secondArray.length * 2 ; i < resultArray.length; i++) {
+            for (int i = secondArray.length * 2; i < resultArray.length; i++) {
                 resultArray[i] = firstArray[i - secondArray.length];
             }
-        }
-        else {
+        } else {
             for (int i = 0, j = 0; i < resultArray.length && j < firstArray.length; i++, j++) {
                 resultArray[i] = firstArray[j];
                 i++;
                 resultArray[i] = secondArray[j];
             }
-            for (int i = firstArray.length * 2 ; i < resultArray.length; i++) {
+            for (int i = firstArray.length * 2; i < resultArray.length; i++) {
                 resultArray[i] = secondArray[i - firstArray.length];
             }
         }

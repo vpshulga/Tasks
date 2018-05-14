@@ -8,5 +8,6 @@ public class HomeWorkMain {
         timeInterval1.printResults();
         Bankomat bankomat = new Bankomat(5, 1, 5);
         bankomat.takeMoney(130);
+
     }
 }

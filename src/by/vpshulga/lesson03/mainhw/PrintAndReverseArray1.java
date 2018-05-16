@@ -10,8 +10,8 @@ public class PrintAndReverseArray1 {
     static void printArray() {
         System.out.println("Задача 1:");
         int[] array = {1, 3, 4, 5, 10, 12};
-        for (int i = 0; i < array.length; i++) {
-            System.out.print(array[i] + " ");
+        for (int anArray : array) {
+            System.out.print(anArray + " ");
         }
         System.out.println("");
 

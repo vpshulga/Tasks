@@ -3,6 +3,8 @@ package by.vpshulga.lesson06.heroes;
 import by.vpshulga.lesson06.Mortal;
 import by.vpshulga.lesson06.enemies.Enemy;
 
+import java.util.Scanner;
+
 public abstract class Hero implements Mortal {
     private String name;
     private int health;
@@ -40,6 +42,7 @@ public abstract class Hero implements Mortal {
             }
             System.out.println(getClass().getSimpleName() + " " + getName() + " attacks " + enemy.getClass().getSimpleName() + " and deals "
                     + getDamage() + " damage" + "(" + enemy.getClass().getSimpleName() + " has " + enemy.getHealth() + " HP).");
+
         }
     }
 
@@ -49,4 +52,6 @@ public abstract class Hero implements Mortal {
     public boolean isAlive() {
         return health > 0;
     }
+
+
 }

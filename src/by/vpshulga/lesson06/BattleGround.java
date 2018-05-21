@@ -8,51 +8,48 @@ import by.vpshulga.lesson06.heroes.Hero;
 import by.vpshulga.lesson06.heroes.Mage;
 import by.vpshulga.lesson06.heroes.Warrior;
 
+import java.util.Scanner;
+
 public class BattleGround {
     public static void main(String[] args) {
-        Warrior warrior = new Warrior("VALERA", 150);
+
+        Scanner scanner = new Scanner(System.in);
+        int chosenHero;
+        do {
+            System.out.println("Ведите номер героя\n" +
+                    "Archer: 1\n" +
+                    "Mage: 2\n" +
+                    "Warrior: 3");
+            chosenHero = scanner.nextInt();
+        } while (!(chosenHero == 1 || chosenHero == 2 || chosenHero == 3));
+
+        Hero hero = null;
+
+        switch (chosenHero){
+            case 1:
+                hero = new Archer("RUSLAN", 100);
+                break;
+            case 2:
+                hero = new Mage("VLAD", 120);
+                break;
+            case 3:
+                hero = new Warrior("VALERA", 150);
+        }
+
+
         Enemy ghost = new Ghost(60);
         Enemy zombie = new Zombie(50);
-        Hero mage = new Mage("VLAD", 120);
-        Hero archer = new Archer("RUSLAN", 100);
-//        while (warrior.isAlive() &&( ghost.isAlive() || zombie.isAlive())) {
-//            warrior.attackEnemy(ghost);
-//            warrior.attackEnemy(zombie);
-//            ghost.returnDamage(warrior);
-//            zombie.returnDamage(warrior);
-//            System.out.println("");
-//        }
-//
-//        if (warrior.isAlive()){
-//            System.out.println("You won, your HP: " + warrior.getHealth());
-//        } else {
-//            System.out.println("You died");
-//        }
 
-//        while (mage.isAlive() &&( ghost.isAlive() || zombie.isAlive())){
-//            mage.attackEnemy(ghost);
-//            mage.attackEnemy(zombie);
-//            ghost.returnDamage(mage);
-//            zombie.returnDamage(mage);
-//            System.out.println("");
-//        }
-//
-//        if (mage.isAlive()){
-//            System.out.println("You won, your HP: " + mage.getHealth());
-//        } else {
-//            System.out.println("You died");
-//        }
-
-        while (archer.isAlive() && (ghost.isAlive() || zombie.isAlive())) {
-            archer.attackEnemy(ghost);
-            archer.attackEnemy(zombie);
-            ghost.returnDamage(archer);
-            zombie.returnDamage(archer);
+        while (hero.isAlive() && (ghost.isAlive() || zombie.isAlive())) {
+            hero.attackEnemy(ghost);
+            hero.attackEnemy(zombie);
+            ghost.returnDamage(hero);
+            zombie.returnDamage(hero);
             System.out.println("");
         }
 
-        if (archer.isAlive()) {
-            System.out.println("You won, your HP: " + archer.getHealth());
+        if (hero.isAlive()) {
+            System.out.println("You won, your HP: " + hero.getHealth());
         } else {
             System.out.println("You died");
         }

@@ -6,7 +6,14 @@ public class HomeWorkMain {
         timeInterval.printResults();
         TimeInterval timeInterval1 = new TimeInterval(10, 21, 35);
         timeInterval1.printResults();
-        Bankomat bankomat = new Bankomat(5, 1, 5);
+        System.out.println("----------------");
+        Bankomat bankomat = new Bankomat(5, 0, 5);
+        bankomat.takeMoney(270);
         bankomat.takeMoney(110);
+        bankomat.add20(5);
+        bankomat.add50(2);
+        bankomat.takeMoney(110);
+        bankomat.takeMoney(80);
+        bankomat.getCountOfNominals();
     }
 }

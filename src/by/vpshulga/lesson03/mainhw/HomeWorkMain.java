@@ -11,7 +11,7 @@ public class HomeWorkMain {
         EqualsElementsFromTwoArrays6.equlsEachElement(); // Task6
         DeckOfCards78.randomCard(); // Task7
         DeckOfCards78.printShuffledDeck();// Task8
-        System.out.println(CheckSimpleNumber9.checkNumber(13)); // Task9
+        System.out.println(CheckSimpleNumber9.checkNumber(2001)); // Task9
         System.out.println("--------------------------------------------------------");
         Factorial10.factorialFor(5); // Task10
         Factorial10.factorialWhile(-1); // Task10

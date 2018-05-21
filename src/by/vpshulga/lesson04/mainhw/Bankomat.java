@@ -63,9 +63,9 @@ public class Bankomat {
             }
 
             if (countOfTaken100 * 100 + countOfTaken50 * 50 + countOfTaken20 * 20 == totalMoney) {
-                System.out.println("100: " + countOfTaken100);
-                System.out.println("50: " + countOfTaken50);
-                System.out.println("20: " + countOfTaken20);
+                System.out.println("Количество купюр номиналом 100: " + countOfTaken100);
+                System.out.println("Количество купюр номиналом 50: " + countOfTaken50);
+                System.out.println("Количество купюр номиналом 20: " + countOfTaken20);
                 countOf100 -= countOfTaken100;
                 countOf50 -= countOfTaken50;
                 countOf20 -= countOfTaken20;
@@ -78,5 +78,12 @@ public class Bankomat {
         } else {
             System.out.println("Вы ввели некорректную сумму");
         }
+    }
+
+    void getCountOfNominals() {
+        System.out.println("Осталось:\n" +
+                "Купюр номиналом 100 - " + countOf100 +
+                ", Купюр номиналом 50 - " + countOf50 +
+                ", Купюр номиналом 20 - " + countOf20);
     }
 }

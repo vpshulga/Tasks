@@ -14,4 +14,10 @@ public class Rectangle extends Parallelogram implements IDiagonal{
     @Override
     public double getDiagonal() {
         return Math.sqrt((getA() * getA() + getB() *getB()));    }
+
+    @Override
+    public String toString() {
+        return "Rectangle{a=" + getA() +
+                ", b=" + getB() + "}";
+    }
 }

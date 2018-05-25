@@ -9,4 +9,10 @@ public class Rhombus extends Parallelogram {
     public double getSquare() {
         return getA() * getA() * (Math.sin(Math.toRadians(getDegree())));
     }
+
+    @Override
+    public String toString() {
+        return "Rhombus{a=" + getA() +
+                ", degree=" + getDegree() + "}";
+    }
 }

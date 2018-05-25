@@ -14,4 +14,9 @@ public class Quadrate extends Rhombus implements IDiagonal{
     public double getDiagonal() {
         return Math.sqrt(2) * getA();
     }
+
+    @Override
+    public String toString() {
+        return "Quadrate{a=" + getA() + "}";
+    }
 }

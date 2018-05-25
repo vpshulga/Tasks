@@ -26,4 +26,12 @@ public class Parallelogram extends Quadrilateral {
     public double getSquare() {
         return getA() * getB() * (Math.sin(Math.toRadians(degree)));
     }
+
+    @Override
+    public String toString() {
+        return "Parallelogram{" +
+                "degree=" + degree +
+                 ", a=" + getA() +
+                ", b=" + getB() + "}";
+    }
 }

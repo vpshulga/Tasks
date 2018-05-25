@@ -26,15 +26,15 @@ public abstract class Quadrilateral implements IFigure {
         this.a = a;
     }
 
-    public void setB(double b) {
+    void setB(double b) {
         this.b = b;
     }
 
-    public void setC(double c) {
+    void setC(double c) {
         this.c = c;
     }
 
-    public void setD(double d) {
+    void setD(double d) {
         this.d = d;
     }
 

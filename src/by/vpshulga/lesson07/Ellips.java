@@ -14,6 +14,22 @@ public class Ellips implements IFigure {
         }
     }
 
+    public double getA() {
+        return a;
+    }
+
+    public void setA(double a) {
+        this.a = a;
+    }
+
+    public double getB() {
+        return b;
+    }
+
+    public void setB(double b) {
+        this.b = b;
+    }
+
     @Override
     public double getSquare() {
         return Math.PI * a * b;
@@ -27,5 +43,13 @@ public class Ellips implements IFigure {
     @Override
     public boolean isEqual(IFigure figure) {
         return this.getSquare() == figure.getSquare();
+    }
+
+    @Override
+    public String toString() {
+        return "Ellips{" +
+                "firstRadius=" + a +
+                ", secondRadius=" + b +
+                '}';
     }
 }

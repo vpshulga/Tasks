@@ -33,6 +33,11 @@ public class DemoBigDecimal {
     }
 
     BigDecimal demoDivide() {
-        return bigDecimalOne.divide(bigDecimalTwo, 5, BigDecimal.ROUND_DOWN);
+        try {
+            return bigDecimalOne.divide(bigDecimalTwo, 5, BigDecimal.ROUND_DOWN);
+        } catch (ArithmeticException e){
+            System.out.println("Division by Zero!");
+            return null;
+        }
     }
 }

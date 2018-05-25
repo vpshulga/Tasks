@@ -13,9 +13,11 @@ public class Main {
 
         Rectangle rect = new Rectangle(10, 20);
         System.out.println(rect.getDiagonal());
+        System.out.println(rect);
 
 
         IFigure romb = new Rhombus(12, 170);
+        System.out.println(romb);
         System.out.println(romb.getSquare());
         System.out.println(romb.getPerimeter());
 
@@ -23,7 +25,6 @@ public class Main {
 
         IFigure circle = new Circle(10);
         System.out.println(circle.getSquare());
-
-
+        System.out.println(circle);
     }
 }

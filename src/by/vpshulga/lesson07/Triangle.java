@@ -74,4 +74,13 @@ public class Triangle implements IFigure, IAltitude {
         double p = getPerimeter() / 2;
         return 2 * Math.sqrt(getSquare()) / c;
     }
+
+    @Override
+    public String toString() {
+        return "Triangle{" +
+                "a=" + a +
+                ", b=" + b +
+                ", c=" + c +
+                '}';
+    }
 }

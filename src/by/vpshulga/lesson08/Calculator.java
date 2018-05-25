@@ -8,7 +8,7 @@ public class Calculator<K extends Number, V extends Number> {
     private K first;
     private V second;
 
-    public Calculator(K first, V second) {
+    Calculator(K first, V second) {
         this.first = first;
         this.second = second;
     }

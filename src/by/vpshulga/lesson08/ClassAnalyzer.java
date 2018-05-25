@@ -3,7 +3,7 @@ package by.vpshulga.lesson08;
 import java.lang.annotation.Annotation;
 import java.lang.reflect.*;
 
-public class ClassAnalyzer {
+class ClassAnalyzer {
     static void analize(Class clazz) {
         methodForConstructor(clazz);
     }

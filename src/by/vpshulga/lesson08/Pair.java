@@ -9,19 +9,19 @@ public class Pair<K, V> {
         this.value = value;
     }
 
-    public K getKey() {
+    K getKey() {
         return key;
     }
 
-    public void setKey(K key) {
+    void setKey(K key) {
         this.key = key;
     }
 
-    public V getValue() {
+    V getValue() {
         return value;
     }
 
-    public void setValue(V value) {
+    void setValue(V value) {
         this.value = value;
     }
 }

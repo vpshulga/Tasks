@@ -1,6 +1,4 @@
 package by.vpshulga.lesson08;
-import java.math.BigDecimal;
-import java.math.BigInteger;
 
 public class Main {
     public static void main(String[] args) {
@@ -12,12 +10,12 @@ public class Main {
 //        System.out.println(calculator.multiple());
 //        System.out.println(calculator.div());
 
-//        TransactionalAnalyzer.analyzeTransaction(TransactionsClass.class, "method1",
-//                "method2", "method3", "method4", "method5", "method6");
-        Calculator<Integer, Integer> calculator = new Calculator<>(1, 2);
-
+        TransactionalAnalyzer.analyzeTransaction(TransactionsClass.class, "method1",
+                "method2", "method3", "method4", "method5", "method6");
+//        Calculator<Integer, Integer> calculator = new Calculator<>(1, 2);
+//
 //        ClassAnalyzer.analize(calculator);
-        ClassAnalyzer.analize(System.class);
+//        ClassAnalyzer.analize(System.class);
     }
 
 

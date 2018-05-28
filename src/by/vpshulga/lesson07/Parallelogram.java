@@ -1,6 +1,6 @@
 package by.vpshulga.lesson07;
 
-public class Parallelogram extends Quadrilateral {
+public class Parallelogram extends FourAngle {
     private double degree;
 
     double getDegree() {

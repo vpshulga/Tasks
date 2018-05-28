@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>by.vpshulga.lesson07</OriginalElement>
+  <nodes>
+    <node x="302.3125" y="79.0">by.vpshulga.lesson07.Triangle</node>
+    <node x="178.625" y="237.0">by.vpshulga.lesson07.Rhombus</node>
+    <node x="132.625" y="316.0">by.vpshulga.lesson07.Quadrate</node>
+    <node x="0.0" y="390.0">by.vpshulga.lesson07.ShapeUtils</node>
+    <node x="108.09090909090912" y="12.727272727272727">by.vpshulga.lesson07.IFigure</node>
+    <node x="207.3125" y="79.0">by.vpshulga.lesson07.Ellips</node>
+    <node x="148.0" y="390.0">by.vpshulga.lesson07.Main</node>
+    <node x="82.08522727272725" y="119.81818181818184">by.vpshulga.lesson07.Parallelogram</node>
+    <node x="60.625" y="237.0">by.vpshulga.lesson07.IDiagonal</node>
+    <node x="205.8125" y="158.0">by.vpshulga.lesson07.Circle</node>
+    <node x="324.0625" y="0.0">by.vpshulga.lesson07.IAltitude</node>
+    <node x="0.0" y="316.0">by.vpshulga.lesson07.Rectangle</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="by.vpshulga.lesson07.Rhombus" target="by.vpshulga.lesson07.Parallelogram">
+      <point x="0.0" y="-14.5" />
+      <point x="228.125" y="212.0" />
+      <point x="155.5625" y="212.0" />
+      <point x="30.25" y="14.5" />
+    </edge>
+    <edge source="by.vpshulga.lesson07.Ellips" target="by.vpshulga.lesson07.IFigure">
+      <point x="0.0" y="-14.5" />
+      <point x="244.8125" y="54.0" />
+      <point x="241.0" y="54.0" />
+      <point x="0.0" y="14.5" />
+    </edge>
+    <edge source="by.vpshulga.lesson07.Circle" target="by.vpshulga.lesson07.Ellips">
+      <point x="0.0" y="-14.5" />
+      <point x="0.0" y="14.5" />
+    </edge>
+    <edge source="by.vpshulga.lesson07.Triangle" target="by.vpshulga.lesson07.IFigure">
+      <point x="-22.75" y="-14.5" />
+      <point x="325.0625" y="54.0" />
+      <point x="269.0" y="54.0" />
+      <point x="28.0" y="14.5" />
+    </edge>
+    <edge source="by.vpshulga.lesson07.Rectangle" target="by.vpshulga.lesson07.Parallelogram">
+      <point x="-25.0" y="-14.5" />
+      <point x="25.0" y="291.0" />
+      <point x="32.5" y="291.0" />
+      <point x="32.5" y="212.0" />
+      <point x="95.0625" y="212.0" />
+      <point x="-30.25" y="14.5" />
+    </edge>
+    <edge source="by.vpshulga.lesson07.Quadrate" target="by.vpshulga.lesson07.Rhombus">
+      <point x="24.25" y="-14.5" />
+      <point x="205.375" y="291.0" />
+      <point x="228.125" y="291.0" />
+      <point x="0.0" y="14.5" />
+    </edge>
+    <edge source="by.vpshulga.lesson07.Rectangle" target="by.vpshulga.lesson07.IDiagonal">
+      <point x="25.0" y="-14.5" />
+      <point x="75.0" y="291.0" />
+      <point x="85.125" y="291.0" />
+      <point x="-24.5" y="14.5" />
+    </edge>
+    <edge source="by.vpshulga.lesson07.Triangle" target="by.vpshulga.lesson07.IAltitude">
+      <point x="22.75" y="-14.5" />
+      <point x="0.0" y="14.5" />
+    </edge>
+    <edge source="by.vpshulga.lesson07.Parallelogram" target="by.vpshulga.lesson07.IFigure">
+      <point x="0.0" y="-14.5" />
+      <point x="200.71590909090907" y="54.0" />
+      <point x="196.625" y="54.0" />
+      <point x="0.0" y="14.5" />
+    </edge>
+    <edge source="by.vpshulga.lesson07.Quadrate" target="by.vpshulga.lesson07.IDiagonal">
+      <point x="-24.25" y="-14.5" />
+      <point x="156.875" y="291.0" />
+      <point x="134.125" y="291.0" />
+      <point x="24.5" y="14.5" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="1.1" x="455.0" y="245.0" />
+  <SelectedNodes>
+    <node>by.vpshulga.lesson07.Parallelogram</node>
+  </SelectedNodes>
+  <Categories />
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+

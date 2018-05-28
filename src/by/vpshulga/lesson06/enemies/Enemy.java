@@ -30,7 +30,7 @@ public abstract class Enemy implements Mortal {
     public abstract void takeDamage(int dmg);
 
     public void returnDamage(Hero hero) {
-        if (this.getHealth() > 0 && hero.isAlive()) {
+        if (this.isAlive() && hero.isAlive()) {
             hero.takeDamage(getDamage());
             if (hero.getHealth() < 0) {
                 hero.setHealth(0);

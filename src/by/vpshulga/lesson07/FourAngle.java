@@ -1,6 +1,6 @@
 package by.vpshulga.lesson07;
 
-public abstract class Quadrilateral implements IFigure {
+public abstract class FourAngle implements IFigure {
     private double a;
     private double b;
     private double c;
@@ -38,7 +38,7 @@ public abstract class Quadrilateral implements IFigure {
         this.d = d;
     }
 
-    Quadrilateral(double a, double b, double c, double d) {
+    FourAngle(double a, double b, double c, double d) {
         if (a <= 0 || b <= 0 || c <= 0 || d <= 0) {
             this.a = 0;
             this.b = 0;

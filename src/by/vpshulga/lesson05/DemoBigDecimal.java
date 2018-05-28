@@ -2,7 +2,7 @@ package by.vpshulga.lesson05;
 
 import java.math.BigDecimal;
 
-public class DemoBigDecimal {
+class DemoBigDecimal {
     private BigDecimal bigDecimalOne;
     private BigDecimal bigDecimalTwo;
 
@@ -16,9 +16,6 @@ public class DemoBigDecimal {
         bigDecimalOne = BigDecimal.valueOf(argOne);
         bigDecimalTwo = BigDecimal.valueOf(argTwo);
     }
-
-
-
 
     BigDecimal demoAdd() {
         return bigDecimalOne.add(bigDecimalTwo);
@@ -35,7 +32,7 @@ public class DemoBigDecimal {
     BigDecimal demoDivide() {
         try {
             return bigDecimalOne.divide(bigDecimalTwo, 5, BigDecimal.ROUND_DOWN);
-        } catch (ArithmeticException e){
+        } catch (ArithmeticException e) {
             System.out.println("Division by Zero!");
             return null;
         }

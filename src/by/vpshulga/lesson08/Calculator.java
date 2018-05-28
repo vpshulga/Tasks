@@ -3,7 +3,6 @@ package by.vpshulga.lesson08;
 import java.math.BigInteger;
 import java.math.BigDecimal;
 
-@Deprecated
 public class Calculator<K extends Number, V extends Number> {
     private K first;
     private V second;
@@ -31,24 +30,24 @@ public class Calculator<K extends Number, V extends Number> {
 
     @Deprecated
     @Transactional
-    Number add(){
-        if (isInteger(first) && isInteger(second)){
+    Number add() {
+        if (isInteger(first) && isInteger(second)) {
             return first.longValue() + second.longValue();
         } else {
             return first.doubleValue() + second.doubleValue();
         }
     }
 
-    Number minus(){
-        if (isInteger(first) && isInteger(second)){
+    Number minus() {
+        if (isInteger(first) && isInteger(second)) {
             return first.longValue() - second.longValue();
         } else {
             return first.doubleValue() - second.doubleValue();
         }
     }
 
-    Number multiple(){
-        if (isInteger(first) && isInteger(second)){
+    Number multiple() {
+        if (isInteger(first) && isInteger(second)) {
             return first.longValue() * second.longValue();
         } else {
             return first.doubleValue() * second.doubleValue();
@@ -56,11 +55,11 @@ public class Calculator<K extends Number, V extends Number> {
     }
 
     @Transactional
-    Number div(){
-        if (isInteger(first) && isInteger(second)){
+    Number div() {
+        if (isInteger(first) && isInteger(second)) {
             try {
                 return first.longValue() / second.longValue();
-            } catch (ArithmeticException e){
+            } catch (ArithmeticException e) {
                 System.out.println("Division by Zero!");
                 return null;
             }
@@ -68,7 +67,7 @@ public class Calculator<K extends Number, V extends Number> {
         } else {
             try {
                 return first.doubleValue() / second.doubleValue();
-            } catch (ArithmeticException e){
+            } catch (ArithmeticException e) {
                 System.out.println("Division by Zero!");
                 return null;
             }
@@ -77,13 +76,13 @@ public class Calculator<K extends Number, V extends Number> {
 
     @Deprecated
     @Transactional
-    private boolean isInteger(Number number){
+    private boolean isInteger(Number number) {
         return number instanceof Integer || number instanceof Long || number instanceof Short
                 || number instanceof Byte || number instanceof BigInteger;
 
     }
 
-    private boolean isDouble(Number number){
+    private boolean isDouble(Number number) {
         return number instanceof Double || number instanceof Float || number instanceof BigDecimal;
     }
 }

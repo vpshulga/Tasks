@@ -35,7 +35,7 @@ public abstract class Hero implements Mortal {
     }
 
     public void attackEnemy(Enemy enemy) {
-        if (this.getHealth() > 0 && enemy.isAlive()) {
+        if (this.isAlive() && enemy.isAlive()) {
             enemy.takeDamage(getDamage());
             if (enemy.getHealth() < 0) {
                 enemy.setHealth(0);

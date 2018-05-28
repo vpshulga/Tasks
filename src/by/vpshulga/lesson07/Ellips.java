@@ -4,7 +4,7 @@ public class Ellips implements IFigure {
     private double a;
     private double b;
 
-    public Ellips(double a, double b) {
+    Ellips(double a, double b) {
         if (a <= 0 || b <= 0) {
             this.a = 0;
             this.b = 0;

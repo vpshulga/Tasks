@@ -5,12 +5,12 @@ import java.lang.reflect.*;
 
 class ClassAnalyzer {
     static void analize(Class clazz) {
-        methodForConstructor(clazz);
+        methodForAnalize(clazz);
     }
 
     static void analize(Object object) {
         Class clazz = object.getClass();
-        methodForConstructor(clazz);
+        methodForAnalize(clazz);
 
     }
 
@@ -98,7 +98,7 @@ class ClassAnalyzer {
                 "notifyAll".equals(method.getName()) || "hashCode".equals(method.getName()));
     }
 
-    private static void methodForConstructor(Class clazz) {
+    private static void methodForAnalize(Class clazz) {
         System.out.println("FIELDS");
         analizeFields(clazz);
         System.out.println("----------------------");

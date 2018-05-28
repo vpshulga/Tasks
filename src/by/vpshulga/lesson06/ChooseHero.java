@@ -7,9 +7,9 @@ import by.vpshulga.lesson06.heroes.Warrior;
 
 import java.util.Scanner;
 
-public class ChooseHero {
+class ChooseHero {
 
-    static Hero chooseHero(){
+    static Hero chooseHero() {
         Hero hero = null;
         Scanner scanner = new Scanner(System.in);
         int chosenHero;
@@ -24,7 +24,7 @@ public class ChooseHero {
         } while (!(chosenHero == 1 || chosenHero == 2 || chosenHero == 3));
 
 
-        switch (chosenHero){
+        switch (chosenHero) {
             case 1:
                 hero = new Archer(name, 100);
                 break;

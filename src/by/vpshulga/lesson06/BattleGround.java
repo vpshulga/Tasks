@@ -8,13 +8,10 @@ import by.vpshulga.lesson06.heroes.Hero;
 import by.vpshulga.lesson06.heroes.Mage;
 import by.vpshulga.lesson06.heroes.Warrior;
 
-
-
 public class BattleGround {
     public static void main(String[] args) {
 
         Hero hero = ChooseHero.chooseHero();
-
 
         Enemy ghost = new Ghost(60);
         Enemy zombie = new Zombie(50);
@@ -30,7 +27,7 @@ public class BattleGround {
         if (hero.isAlive()) {
             System.out.println("You won, your HP: " + hero.getHealth());
         } else {
-            System.out.println("You died");
+            System.out.println("You died!");
         }
 
     }

@@ -60,19 +60,19 @@ public class Triangle implements IFigure, IAltitude {
     @Override
     public double getAltitudeA() {
         double p = getPerimeter() / 2;
-        return 2 * Math.sqrt(getSquare()) / a;
+        return 2 * Math.sqrt(p * (p - a) * (p - b) * (p - c)) / a;
     }
 
     @Override
     public double getAltitudeB() {
         double p = getPerimeter() / 2;
-        return 2 * Math.sqrt(getSquare()) / b;
+        return 2 * Math.sqrt(p * (p - a) * (p - b) * (p - c)) / b;
     }
 
     @Override
     public double getAltitudeC() {
         double p = getPerimeter() / 2;
-        return 2 * Math.sqrt(getSquare()) / c;
+        return 2 * Math.sqrt(p * (p - a) * (p - b) * (p - c)) / c;
     }
 
     @Override

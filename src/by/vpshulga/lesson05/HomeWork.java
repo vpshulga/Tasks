@@ -8,7 +8,7 @@ public class HomeWork {
         System.out.println(dbd1.demoMultiply());
         System.out.println(dbd1.demoDivide());
         System.out.println("------------------------");
-        DemoBigDecimal dbd2 = new DemoBigDecimal(3.0, 0.0);
+        DemoBigDecimal dbd2 = new DemoBigDecimal(3.0, 2.0);
         System.out.println(dbd2.demoAdd());
         System.out.println(dbd2.demoSubtract());
         System.out.println(dbd2.demoMultiply());

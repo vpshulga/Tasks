@@ -47,6 +47,7 @@ public class Main {
         BlackBox.addNumber(11);
         BlackBox.addNumber(12);
         BlackBox.getNMax(4);
+        BlackBox.getKMin(4);
         System.out.println("-----------------------------");
     }
 }

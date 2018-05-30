@@ -4,6 +4,7 @@ import java.util.*;
 
 public class Main {
     public static void main(String[] args) {
+
         System.out.println("Task 01");
         List<Integer> list = ListOfMarks.createListOfMarks();
         System.out.println(list);

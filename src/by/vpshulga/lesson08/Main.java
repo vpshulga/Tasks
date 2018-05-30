@@ -6,24 +6,22 @@ import java.math.BigInteger;
 public class Main {
     public static void main(String[] args) {
 //
-//        Pair<String, Integer> pair = new Pair<>("sa", 1);
-//        System.out.println(pair.getKey());
-//        System.out.println(pair.getValue());
-//        System.out.println(PairUtil.swap(pair).getKey());
-//        System.out.println(PairUtil.swap(pair).getValue());
+        Pair<String, Integer> pair = new Pair<>("sa", 1);
+        System.out.println(PairUtil.swap(pair).getKey());
+        System.out.println(PairUtil.swap(pair).getValue());
 //
 //
-//        BigInteger bInt = BigInteger.valueOf(10);
-//        BigDecimal bDec = BigDecimal.valueOf(20);
-//        Calculator<BigInteger, BigDecimal> calculator = new Calculator<>(bInt, bDec);
-//        System.out.println(calculator.add());
-//        System.out.println(calculator.minus());
-//        System.out.println(calculator.multiple());
-//        System.out.println(calculator.div());
-//
+        BigInteger bInt = BigInteger.valueOf(10);
+        Double d = 0.1;
+        Calculator<BigInteger, Double> calculator = new Calculator<>(bInt, d);
+        System.out.println(calculator.add());
+        System.out.println(calculator.minus());
+        System.out.println(calculator.multiple());
+        System.out.println(calculator.div());
+
         TransactionalAnalyzer.analyzeTransaction(TransactionsClass.class, "method1",
                 "method2", "method3", "method4", "method5", "method6");
-//
+
         ClassAnalyzer.analize(new Calculator<>(1, 2));
 //        ClassAnalyzer.analize(System.class);
     }

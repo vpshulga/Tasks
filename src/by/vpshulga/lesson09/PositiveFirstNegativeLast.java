@@ -23,7 +23,6 @@ public class PositiveFirstNegativeLast {
                 negList.add(integer);
             }
         }
-
         posList.addAll(negList);
         return posList;
     }

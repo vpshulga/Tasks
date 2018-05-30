@@ -1,0 +1,4 @@
+1. log4j библиотека в папке libs
+2. в проекте создать папку resources ---- mark directory as Resources root
+3. log4j.properties в папку
+4. добавить log4j.jar в проект

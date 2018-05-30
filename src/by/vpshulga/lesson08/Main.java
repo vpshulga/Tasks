@@ -23,9 +23,8 @@ public class Main {
 //
         TransactionalAnalyzer.analyzeTransaction(TransactionsClass.class, "method1",
                 "method2", "method3", "method4", "method5", "method6");
-        Calculator<Integer, Integer> calculator = new Calculator<>(1, 2);
 //
-        ClassAnalyzer.analize(calculator);
+        ClassAnalyzer.analize(new Calculator<>(1, 2));
 //        ClassAnalyzer.analize(System.class);
     }
 

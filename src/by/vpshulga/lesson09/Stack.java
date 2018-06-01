@@ -33,7 +33,7 @@ public class Stack {
     Integer pop() {
         int index = 0;
         Integer printedElement = stack.get(stack.size() - 1);
-        if (stack.size() > 1) {
+        if (stack.size() > 0) {
             index = stack.size() - 1;
         }
         stack.remove(index);
@@ -62,7 +62,7 @@ public class Stack {
 
     void printStack() {
         for (int i = stack.size() - 1; i >= 0; i--) {
-            System.out.print(stack.get(i));
+            System.out.print(pop());
         }
         System.out.println();
     }

@@ -18,7 +18,6 @@ class SetUtils {
     }
 
     static Set<Integer> intersectionSet(Set<Integer> firstSet, Set<Integer> secondSet) {
-        Set<Integer> intersection = new HashSet<>();
         if (firstSet.size() >= secondSet.size()) {
             firstSet.retainAll(secondSet);
             return firstSet;

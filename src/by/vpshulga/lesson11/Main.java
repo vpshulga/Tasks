@@ -56,8 +56,7 @@ public class Main {
         try {
             FiftyFifty.fiftyFifty();
         } catch (MyException e) {
-//            System.out.println("123");
-            LOGGER.error("Exception was caught", e);
+            LOGGER.warn("Exception was caught", e);
         } finally {
             System.out.println("Every case");
         }

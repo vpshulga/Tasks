@@ -29,14 +29,14 @@ public class Main {
         System.out.println("Task05");
         Set<Integer> first = SetUtils.fillSet(8);
         Set<Integer> second = SetUtils.fillSet(5);
-        System.out.println(first);
-        System.out.println(second);
-        System.out.println(SetUtils.mergeSets(first, second));
+        System.out.println("1st Set: " + first);
+        System.out.println("2nd Set: " + second);
+        System.out.println("Merge: " + SetUtils.mergeSets(first, second));
         Set<Integer> third = SetUtils.fillSet(8);
         Set<Integer> fourth = SetUtils.fillSet(5);
-        System.out.println(third);
-        System.out.println(fourth);
-        System.out.println(SetUtils.intersectionSet(third, fourth));
+        System.out.println("3rd Set: " + third);
+        System.out.println("4th Set: " + fourth);
+        System.out.println("Retain: " + SetUtils.intersectionSet(third, fourth));
         System.out.println("---------------------------------");
 
         System.out.println("Task06");

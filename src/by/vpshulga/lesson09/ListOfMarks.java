@@ -16,20 +16,18 @@ class ListOfMarks {
         return marks;
     }
 
-    static List<Integer> deleteBadMarks(List<Integer> list) {
+    static void deleteBadMarks(List<Integer> list) {
         ListIterator<Integer> listIterator = list.listIterator();
         while (listIterator.hasNext()) {
             if (listIterator.next() <= 2) {
                 listIterator.remove();
             }
         }
-        return list;
     }
 
     static Integer maxMark(List<Integer> list) {
         ListIterator<Integer> listIterator = list.listIterator();
         Integer max = listIterator.next();
-
         while (listIterator.hasNext()) {
             Integer tmp = listIterator.next();
             if (tmp > max) {

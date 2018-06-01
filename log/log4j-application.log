@@ -1,0 +1,8 @@
+2018-06-01 12:16:28 ERROR Main:60 - Exception was caught
+by.vpshulga.lesson11.MyException
+	at by.vpshulga.lesson11.FiftyFifty.fiftyFifty(FiftyFifty.java:12)
+	at by.vpshulga.lesson11.Main.main(Main.java:57)
+2018-06-01 12:40:01 ERROR Main:60 - Exception was caught
+by.vpshulga.lesson11.MyException
+	at by.vpshulga.lesson11.FiftyFifty.fiftyFifty(FiftyFifty.java:12)
+	at by.vpshulga.lesson11.Main.main(Main.java:57)

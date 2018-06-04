@@ -17,8 +17,6 @@ public class Main {
     }
 
 
-
-
     private static void plus() {
         System.out.println("Task01");
         long start = System.nanoTime();

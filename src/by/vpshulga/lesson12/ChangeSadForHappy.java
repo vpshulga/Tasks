@@ -15,8 +15,8 @@ class ChangeSadForHappy {
         this.text = text;
     }
 
-    String changeSmiles(){
-        if (getText() != null){
+    String changeSmiles() {
+        if (getText() != null) {
             setText(getText().replaceAll(":\\(", ":)"));
         }
 

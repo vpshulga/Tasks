@@ -2,7 +2,7 @@ package by.vpshulga.lesson12;
 
 public class DeleteRepeats {
 
-    static StringBuilder deleteRepeats(String text){
+    static StringBuilder deleteRepeats(String text) {
         StringBuilder stringBuilder = new StringBuilder();
         if (text != null) {
             char[] chars = text.toCharArray();

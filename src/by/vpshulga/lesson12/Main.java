@@ -58,7 +58,7 @@ public class Main {
 
     private static void task05() {
         System.out.println("Task05");
-        System.out.println(CountOfWords.getCountOfWords("  j   sdfsdf sdf   sdf sdf sdd "));
+        System.out.println(CountOfWords.getCountOfWords("  j   sdfsdf sdf   sdf sdf sdd     "));
         System.out.println("--------------------");
     }
 

@@ -6,3 +6,13 @@ by.vpshulga.lesson11.MyException
 by.vpshulga.lesson11.MyException
 	at by.vpshulga.lesson11.FiftyFifty.fiftyFifty(FiftyFifty.java:12)
 	at by.vpshulga.lesson11.Main.main(Main.java:57)
+2018-06-04 20:07:49 WARN  Main:88 - Exception was caught
+by.vpshulga.lesson11.MyException
+	at by.vpshulga.lesson11.FiftyFifty.fiftyFifty(FiftyFifty.java:12)
+	at by.vpshulga.lesson11.Main.task07(Main.java:86)
+	at by.vpshulga.lesson11.Main.main(Main.java:17)
+2018-06-04 20:07:54 WARN  Main:88 - Exception was caught
+by.vpshulga.lesson11.MyException
+	at by.vpshulga.lesson11.FiftyFifty.fiftyFifty(FiftyFifty.java:12)
+	at by.vpshulga.lesson11.Main.task07(Main.java:86)
+	at by.vpshulga.lesson11.Main.main(Main.java:17)

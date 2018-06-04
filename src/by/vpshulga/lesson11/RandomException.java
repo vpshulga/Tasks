@@ -9,7 +9,7 @@ public class RandomException {
     static void randomException() throws MyException, IOException {
         Random random = new Random();
         int exceptionNumber = random.nextInt(3);
-        switch (exceptionNumber){
+        switch (exceptionNumber) {
             case 0:
                 throw new MyException();
             case 1:

@@ -14,15 +14,15 @@ public class Main {
 //        task04();
 //        task05();
 //        task06();
-        task07();
+//        task07();
 
     }
 
     private static void task01() {
         System.out.println("Task01");
-        Task01 task01 = null;
+        String s = null;
         try {
-            task01.method();
+            s.toCharArray();
         } catch (NullPointerException e) {
             System.out.println("Null pointer");
         }
@@ -57,7 +57,6 @@ public class Main {
         } catch (MyRuntimeException e) {
             e.printStackTrace();
         }
-        MyRuntimeException.method();
         System.out.println("-------------------------");
     }
 
@@ -88,7 +87,7 @@ public class Main {
         } catch (MyException e) {
             LOGGER.warn("Exception was caught", e);
         } finally {
-            System.out.println("Every case");
+            System.out.println("Anyway");
         }
         System.out.println("-------------------------");
     }

@@ -5,7 +5,7 @@ public class MyRuntimeException extends RuntimeException {
         super(message);
     }
 
-    static void method(){
+    static void method() {
         throw new MyRuntimeException("My Runtime Exception");
     }
 }

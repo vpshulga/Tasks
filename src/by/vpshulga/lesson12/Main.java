@@ -2,8 +2,8 @@ package by.vpshulga.lesson12;
 
 public class Main {
     public static void main(String[] args) {
-        plus();
-        append();
+//        plus();
+//        append();
 
         task02();
 
@@ -46,7 +46,7 @@ public class Main {
 
     private static void task03() {
         System.out.println("Task03");
-        System.out.println(StartsAndEndsWithWord.isStartsAndEndsWithWord("AAA ffff sadsad asAA", "AAA"));
+        System.out.println(StartsAndEndsWithWord.isStartsAndEndsWithWord("AAA f\nfff sad\nsad asAAA", "AAA"));
         System.out.println("--------------------");
     }
 

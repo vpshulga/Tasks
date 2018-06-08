@@ -16,3 +16,21 @@ by.vpshulga.lesson11.MyException
 	at by.vpshulga.lesson11.FiftyFifty.fiftyFifty(FiftyFifty.java:12)
 	at by.vpshulga.lesson11.Main.task07(Main.java:86)
 	at by.vpshulga.lesson11.Main.main(Main.java:17)
+2018-06-07 12:13:32 WARN  Main:88 - Exception was caught
+by.vpshulga.lesson11.MyException
+	at by.vpshulga.lesson11.FiftyFifty.fiftyFifty(FiftyFifty.java:12)
+	at by.vpshulga.lesson11.Main.task07(Main.java:86)
+	at by.vpshulga.lesson11.Main.main(Main.java:17)
+2018-06-07 12:13:41 WARN  Main:88 - Exception was caught
+by.vpshulga.lesson11.MyException
+	at by.vpshulga.lesson11.FiftyFifty.fiftyFifty(FiftyFifty.java:12)
+	at by.vpshulga.lesson11.Main.task07(Main.java:86)
+	at by.vpshulga.lesson11.Main.main(Main.java:17)
+2018-06-07 12:15:13 WARN  Main:88 - Exception was caught
+by.vpshulga.lesson11.MyException
+	at by.vpshulga.lesson11.FiftyFifty.fiftyFifty(FiftyFifty.java:12)
+	at by.vpshulga.lesson11.Main.task07(Main.java:86)
+	at by.vpshulga.lesson11.Main.main(Main.java:17)
+2018-06-07 12:16:26 WARN  ReadFileWriteToConsole:20 - java.io.FileNotFoundException: src\by\vpshulg\lesson14\Task01.txt (Системе не удается найти указанный путь)
+2018-06-07 16:51:12 WARN  ReadFileWriteToConsole:43 - java.io.EOFException
+2018-06-07 16:57:41 WARN  ReadFileWriteToConsole:44 - java.io.EOFException

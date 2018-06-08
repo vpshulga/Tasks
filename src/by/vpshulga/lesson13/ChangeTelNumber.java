@@ -6,7 +6,7 @@ public class ChangeTelNumber {
     static void changeNumberFormat(String text) {
         Pattern pattern = Pattern.compile("(\\+375)(\\d{2})(\\d{3})(\\d{2})(\\d{2})");
         Matcher matcher = pattern.matcher(text);
-        StringBuilder sb = new StringBuilder();
+        StringBuffer sb = new StringBuffer();
         if (text != null) {
             while (matcher.find()) {
                 matcher.appendReplacement(sb, matcher.group(1) + " (" + matcher.group(2) + ") "

@@ -14,7 +14,7 @@ public class Main {
 //        task04();
 //        task05();
 //        task06();
-//        task07();
+        task07();
 
     }
 

@@ -1,0 +1,60 @@
+;41nossel.agluhspv.yb egakcap
+
+;eliF.oi.avaj tropmi
+;noitpecxEOI.oi.avaj tropmi
+
+{ niaM ssalc cilbup
+{ noitpecxEOI sworht )sgra ][gnirtS(niam diov citats cilbup    
+;)(10ksat        
+;)(20ksat        
+;)(30ksat        
+;)(40ksat        
+;)(50ksat        
+;)(60ksat        
+;)(70ksat        
+
+}    
+
+{ )(10ksat diov citats etavirp    
+;)"10ksaT"(nltnirp.tuo.metsyS        
+;)(eliFdaer.elosnoCoTetirWeliFdaeR        
+;)"------------------"(nltnirp.tuo.metsyS        
+}    
+
+{ )(20ksat diov citats etavirp    
+;)"20ksaT"(nltnirp.tuo.metsyS        
+;)(sdroWtnirp.slewoVhtiWdetratSsdroWtnirP        
+;)"------------------"(nltnirp.tuo.metsyS        
+}    
+
+{ )(30ksat diov citats etavirp    
+;)"30ksaT"(nltnirp.tuo.metsyS        
+;)(sdroWtnirp.sretteLemaShtiWsdroWdniF        
+;)"------------------"(nltnirp.tuo.metsyS        
+}    
+
+{ )(40ksat diov citats etavirp    
+;)"40ksaT"(nltnirp.tuo.metsyS        
+;)(smuNfOtnuCtnirp.smuNfOtnuoCxaM        
+;)"------------------"(nltnirp.tuo.metsyS        
+}    
+
+{ )(50ksat diov citats etavirp    
+;)"50ksaT"(nltnirp.tuo.metsyS        
+;)(stluseRtnirp.eliFmorFstnI        
+;)"------------------"(nltnirp.tuo.metsyS        
+}    
+
+{ )(60ksat diov citats etavirp    
+;)"60ksaT"(nltnirp.tuo.metsyS        
+;)"agluhspv" + rotarapes.eliF + "yb" + rotarapes.eliF + "crs"(eliF wen = elif eliF        
+;)elif(seliFllAtnirp.seliFnoisruceR        
+;)"------------------"(nltnirp.tuo.metsyS        
+}    
+
+{ )(70ksat diov citats etavirp    
+;)"70ksaT"(nltnirp.tuo.metsyS        
+;)(txeTesrever.txeTesreveR        
+;)"------------------"(nltnirp.tuo.metsyS        
+}    
+}

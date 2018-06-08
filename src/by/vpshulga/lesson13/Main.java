@@ -29,8 +29,8 @@ public class Main {
 
     private static void task04() {
         System.out.println("Task 04");
-        ChangeTelNumber.changeNumberFormat("+375296622616asdas asdas +375256682777\n+375256682777 +375256682777+375256682777 +375256682777" +
-                "\n+375256682777+375256682777");
+        ChangeTelNumber.changeNumberFormat("+375296622616asdas asdas +37525a6682777\n+375251111111 +375252222222 +375253333333 +375256682777" +
+                "\n+375256682777 +375256682777");
         System.out.println("-------------------");
     }
 

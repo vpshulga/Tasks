@@ -3,7 +3,7 @@ package by.vpshulga.lesson16;
 import java.util.stream.Stream;
 
 class Task05 {
-    static void fullNameOfOldestPerson(){
+    static void fullNameOfOldestPerson() {
         Person person = Stream.of(
                 new Person("Aaaa", "Bbbb", 17),
                 new Person("Aaaabbb", "Bbbbbbbbb", 21),
@@ -15,7 +15,6 @@ class Task05 {
                 .sorted((p1, p2) -> Integer.compare(p2.getAge(), p1.getAge()))
                 .findFirst().orElse(new Person("Default name", "Default lastName", 0));
         System.out.println(person.getFirstName() + " " + person.getLastName());
-
 
 
     }

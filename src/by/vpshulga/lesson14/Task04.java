@@ -9,7 +9,7 @@ import java.util.regex.Pattern;
 public class Task04 {
     static void printCuntOfNums() {
         File file = new File("src" + File.separator + "by" + File.separator
-                + "vpshulga" + File.separator + "lesson14" + File.separator + "Task01.txt");
+                + "vpshulga" + File.separator + "lesson14" + File.separator + "Task01_buf.txt");
         ArrayList<String> list = FileUtils.addStringsFromFileToList(file);
         Pattern pattern = Pattern.compile("\\d+");
         for (String s : list) {

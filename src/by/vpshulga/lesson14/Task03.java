@@ -8,7 +8,7 @@ class Task03 {
 
     static void printWords(){
         File file = new File("src" + File.separator + "by" + File.separator
-                + "vpshulga" + File.separator + "lesson14" + File.separator + "Task01.txt");
+                + "vpshulga" + File.separator + "lesson14" + File.separator + "Task01_buf.txt");
         ArrayList<String> list = FileUtils.addStringsFromFileToList(file);
         ArrayList<String> wordsList = new ArrayList<>();
 

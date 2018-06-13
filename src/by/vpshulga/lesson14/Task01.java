@@ -8,7 +8,7 @@ public class Task01 {
 
     static void readFile(){
         File file = new File("src" + File.separator +  "by" + File.separator
-                + "vpshulga" + File.separator + "lesson14" + File.separator + "Task01.txt");
+                + "vpshulga" + File.separator + "lesson14" + File.separator + "Task01_buf.txt");
         if (file.exists()) {
             try (FileReader fr = new FileReader(file);
                  BufferedReader bf = new BufferedReader(fr)) {

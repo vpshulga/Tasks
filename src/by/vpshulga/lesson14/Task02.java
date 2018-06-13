@@ -13,7 +13,7 @@ public class Task02 {
 
     static void printWords() {
         File file = new File("src" + File.separator + "by" + File.separator
-                + "vpshulga" + File.separator + "lesson14" + File.separator + "Task01.txt");
+                + "vpshulga" + File.separator + "lesson14" + File.separator + "Task01_buf.txt");
         ArrayList<String> list = FileUtils.addStringsFromFileToList(file);
         Pattern pattern = Pattern.compile("\\b[aAeEiIoOuUаАуУоОыЫиИэЭяЯюЮёЁеЕ][a-zA-Zа-яА-я0-9-]*\\b", Pattern.MULTILINE);
         if (list != null) {

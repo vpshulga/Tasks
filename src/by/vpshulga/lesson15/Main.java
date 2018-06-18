@@ -4,7 +4,7 @@ import java.io.File;
 
 public class Main {
     public static void main(String[] args) {
-//        Task01.timer();
+        Task01.timer();
         String file = "src" + File.separator +  "by" + File.separator
                 + "vpshulga" + File.separator + "lesson15" + File.separator + "ser.tmp";
 

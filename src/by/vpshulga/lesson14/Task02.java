@@ -1,14 +1,13 @@
 package by.vpshulga.lesson14;
 
 import by.vpshulga.lesson14.utils.FileUtils;
+
 import java.io.File;
 import java.util.ArrayList;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-import org.apache.log4j.Logger;
 
-public class Task02 {
-    private static final Logger LOGGER = Logger.getLogger(Task02.class);
+class Task02 {
 
 
     static void printWords() {

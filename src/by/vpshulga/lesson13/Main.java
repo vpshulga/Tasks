@@ -2,11 +2,11 @@ package by.vpshulga.lesson13;
 
 public class Main {
     public static void main(String[] args) {
-        task01();
-        task02();
-        task03();
-        task04();
-        task05();
+//        task01();
+//        task02();
+//        task03();
+//        task04();
+//        task05();
     }
 
     private static void task01() {

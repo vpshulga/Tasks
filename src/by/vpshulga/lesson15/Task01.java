@@ -1,6 +1,7 @@
 package by.vpshulga.lesson15;
 
 import java.io.*;
+import java.nio.charset.Charset;
 
 public class Task01 {
 
@@ -9,7 +10,8 @@ public class Task01 {
                 + "vpshulga" + File.separator + "lesson15" + File.separator + "Task01.txt");
         int counter = 0;
         if (file.exists()) {
-            try (FileWriter fw = new FileWriter(file)) {
+            try (FileWriter fw = new FileWriter(file);
+                ) {
                 while (counter < 5242880) {
                     fw.write('a');
                     counter++;

@@ -1,6 +1,6 @@
 package by.vpshulga.lesson17;
 
-import by.vpshulga.lesson17.Scientists.Scientist;
+import by.vpshulga.lesson17.scientists.Scientist;
 import by.vpshulga.lesson17.threads.Factory;
 import by.vpshulga.lesson17.threads.Servant;
 

@@ -1,6 +1,6 @@
 package by.vpshulga.lesson17.threads;
 
-import by.vpshulga.lesson17.Scientists.Scientist;
+import by.vpshulga.lesson17.scientists.Scientist;
 
 public class Servant implements Runnable {
     private Scientist scientist;

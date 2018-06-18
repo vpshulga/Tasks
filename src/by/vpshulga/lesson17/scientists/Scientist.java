@@ -1,4 +1,4 @@
-package by.vpshulga.lesson17.Scientists;
+package by.vpshulga.lesson17.scientists;
 
 import by.vpshulga.lesson17.Dump;
 import by.vpshulga.lesson17.PartsOfRobot;

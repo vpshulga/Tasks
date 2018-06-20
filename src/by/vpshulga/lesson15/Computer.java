@@ -7,7 +7,7 @@ public class Computer implements Serializable{
     private int hddCapacity;
     private int ram;
 
-    public Computer(String model, int hddCapacity, int ram) {
+    Computer(String model, int hddCapacity, int ram) {
         this.model = model;
         this.hddCapacity = hddCapacity;
         this.ram = ram;

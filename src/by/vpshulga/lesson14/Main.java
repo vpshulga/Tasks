@@ -5,13 +5,13 @@ import java.io.IOException;
 
 public class Main {
     public static void main(String[] args) throws IOException {
-//        task01();
-//        task02();
-//        task03();
-//        task04();
-//        task05();
+        task01();
+        task02();
+        task03();
+        task04();
+        task05();
         task06();
-//        task07();
+        task07();
 
     }
 

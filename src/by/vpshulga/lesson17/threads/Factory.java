@@ -6,7 +6,7 @@ public class Factory implements Runnable {
     @Override
     public void run() {
         for (int i = 0; i < 100; i++) {
-            Dump.addPartsToDumpEveryNight();
+            Dump.generateParts();
             try {
                 Thread.sleep(100);
             } catch (InterruptedException e) {

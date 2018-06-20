@@ -3,6 +3,7 @@ package by.vpshulga.lesson14;
 import java.io.*;
 import java.util.ArrayList;
 import java.util.Random;
+
 import org.apache.log4j.Logger;
 
 class Task05 {

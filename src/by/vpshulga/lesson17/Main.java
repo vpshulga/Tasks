@@ -7,7 +7,8 @@ import by.vpshulga.lesson17.threads.Servant;
 public class Main {
     public static void main(String[] args) {
         Dump dump = new Dump();
-        System.out.println("Start List: " + dump.getList());
+
+        System.out.println("Start list of parts on dump: " + dump.getList());
         Scientist firstSc = new Scientist("First scientist");
         System.out.println("Starter pack of first scientist: " + firstSc.getPartsMap());
         Scientist secondSc = new Scientist("Second scientist");
@@ -22,6 +23,7 @@ public class Main {
         secondServant.start();
 
         try {
+            factory.join();
             firstServant.join();
             secondServant.join();
         } catch (InterruptedException e) {

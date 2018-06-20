@@ -6,7 +6,6 @@ public class SerializeUtils {
     static void serializeObject(Object o, String fileName) {
         try (FileOutputStream fos = new FileOutputStream(new File(fileName));
              ObjectOutputStream oos = new ObjectOutputStream(fos)) {
-
             oos.writeObject(o);
 
         } catch (IOException e) {

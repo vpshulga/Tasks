@@ -9,15 +9,11 @@ public class Customer implements Runnable {
     private int id;
     private static int counter;
     private Map<Good, Integer> shoppingBasket;
-    private Shop shop;
     private boolean isChooseSomething;
 
-
-    Customer(Shop shop) {
+    Customer() {
         id = ++counter;
-        this.shop = shop;
         System.out.println("Customer " + id + " came in the shop");
-
     }
 
     int getId() {
@@ -41,28 +37,29 @@ public class Customer implements Runnable {
     private synchronized void putGoodsInBasket() {
         shoppingBasket = new HashMap<>();
         Random random = new Random();
-        for (Good good : shop.getAvailableGoods().keySet()) {
+        for (Good good : Shop.getAvailableGoods().keySet()) {
             int countOfGoods = random.nextInt(5);
-            if (countOfGoods > shop.getAvailableGoods().get(good)) {
-                countOfGoods = shop.getAvailableGoods().get(good);
+            if (countOfGoods > Shop.getAvailableGoods().get(good)) {
+                countOfGoods = Shop.getAvailableGoods().get(good);
             }
             shoppingBasket.put(good, countOfGoods);
             if (countOfGoods > 0) {
                 isChooseSomething = true;
                 System.out.println("Customer " + id + " put " + good + " in quantity " + countOfGoods + " pcs.");
             }
-            shop.getAvailableGoods().put(good, shop.getAvailableGoods().get(good) - countOfGoods);
+            Shop.getAvailableGoods().put(good, Shop.getAvailableGoods().get(good) - countOfGoods);
         }
         if (shoppingBasket.values().stream().filter(i -> i > 0).collect(Collectors.toList()).size() == 0) {
             isChooseSomething = false;
             System.out.println("Customer " + id + " hadn`t chosen anything and left the shop");
         } else {
+            Shop.getCustomers().add(this);
             isChooseSomething = true;
         }
     }
 
     double pay(double price) {
         Random random = new Random();
-        return price + price * random.nextInt(11) / 100;
+        return price + price * random.nextInt(16) / 100;
     }
 }

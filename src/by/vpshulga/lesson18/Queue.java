@@ -2,11 +2,10 @@ package by.vpshulga.lesson18;
 
 class Queue {
     static void createThreads(int countOfCustomers) {
+        Shop.setCustomers();
 
-        CashBox.setCustomers(countOfCustomers);
-
-        for (Customer customer : CashBox.getCustomers()) {
-            new Thread(customer).start();
+        for (int i = 0; i < countOfCustomers; i++) {
+            new Thread(new Customer()).start();
         }
 
         for (int i = 0; i < 3; i++) {

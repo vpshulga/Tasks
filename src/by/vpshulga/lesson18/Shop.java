@@ -1,36 +1,30 @@
 package by.vpshulga.lesson18;
 
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Random;
-import java.util.Set;
+import java.util.*;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
-public class Shop {
-    private Map<Good, Integer> availableGoods;
-    private int countOfCustomers;
-    private int countOfCashBoxes;
+class Shop {
+    private static Map<Good, Integer> availableGoods;
+    private static List<Customer> customers;
 
-    Shop(int countOfCustomers, int countOfCashBoxes) {
-        this.countOfCustomers = countOfCustomers;
-        this.countOfCashBoxes = countOfCashBoxes;
+    static {
         fillMap();
     }
 
-    public int getCountOfCashBoxes() {
-        return countOfCashBoxes;
+    static List<Customer> getCustomers() {
+        return customers;
     }
 
-    int getCountOfCustomers() {
-        return countOfCustomers;
+    static synchronized void setCustomers() {
+        customers = new ArrayList<>();
     }
 
-    Map<Good, Integer> getAvailableGoods() {
+    static Map<Good, Integer> getAvailableGoods() {
         return availableGoods;
     }
 
-    private void fillMap() {
+    private static void fillMap() {
         availableGoods = new HashMap<>();
         Set<Good> goods = Stream.of(new Good("Beer", 2, 0),
                 new Good("Vodka", 8, 0),

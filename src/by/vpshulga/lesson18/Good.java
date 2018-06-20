@@ -1,7 +1,8 @@
 package by.vpshulga.lesson18;
 
 public class Good {
-    private int id = 1;
+    private int id;
+    private static int counter;
     private String name;
     private double price;
     private double discount;
@@ -10,7 +11,7 @@ public class Good {
         this.name = name;
         this.price = price;
         this.discount = discount;
-        id++;
+        id = ++counter;
     }
 
     public int getId() {
@@ -31,6 +32,6 @@ public class Good {
 
     @Override
     public String toString() {
-        return name;
+        return name + "(id:" + id + ")";
     }
 }

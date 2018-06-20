@@ -9,19 +9,14 @@ public class CashBox implements Runnable {
     private int id;
     private static int counter;
     private double resultSum;
+    private double totalSum;
     private Customer customer;
     private List<Item> items;
-    private static List<Customer> customers;
     private boolean isFree;
     private static final Semaphore SEMAPHORE = new Semaphore(3, true);
 
-
     CashBox() {
         id = ++counter;
-    }
-
-    static List<Customer> getCustomers() {
-        return customers;
     }
 
     private void setCustomer(Customer customer) {
@@ -30,15 +25,15 @@ public class CashBox implements Runnable {
 
     @Override
     public void run() {
-        while (customers.size() > 0) {
+        while (Shop.getCustomers().size() > 0) {
             try {
                 SEMAPHORE.acquire();
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
-            setCustomer(customers.remove(0));
+            setCustomer(Shop.getCustomers().remove(0));
             serviceCustomer();
-            getRecepeit();
+            takeReceipt();
             System.out.println("Customer " + customer.getId() + " left the shop");
             if (isFree) {
                 SEMAPHORE.release();
@@ -47,16 +42,15 @@ public class CashBox implements Runnable {
     }
 
     private synchronized void serviceCustomer() {
-
         isFree = false;
         items = new ArrayList<>();
-
-        if (customer.isChooseSomething()) {
+        if (customer.isChooseSomething() && customer != null) {
             System.out.println("CashBox " + id + " services customer " + customer.getId());
             for (Good good : customer.getShoppingBasket().keySet()) {
                 if (customer.getShoppingBasket().get(good) > 0) {
                     System.out.println("CashBox " + id + " Handle " + good + "(" + customer.getShoppingBasket().get(good)
-                            + "pcs.) of Customer " + customer.getId());
+                            + "pcs.) of Customer " + customer.getId() + "---->" + Thread.currentThread().getName());
+                    totalSum += good.getPrice() * customer.getShoppingBasket().get(good);
                     resultSum += good.getPrice() * customer.getShoppingBasket().get(good)
                             - good.getPrice() * customer.getShoppingBasket().get(good) * good.getDiscount();
 
@@ -74,22 +68,12 @@ public class CashBox implements Runnable {
         }
     }
 
-    private synchronized void getRecepeit() {
-        Receipt receipt = new Receipt(customer.getId(), new Date(), items, resultSum, customer.pay(resultSum) - resultSum);
+    private synchronized void takeReceipt() {
+        double paidSum = customer.pay(resultSum);
+        Receipt receipt = new Receipt(new Date(), customer, items, totalSum, resultSum, paidSum ,paidSum - resultSum);
         System.out.println("Receipt for customer " + customer.getId());
         System.out.println(receipt);
+        Item.setId(0);
         isFree = true;
-    }
-
-    static synchronized void setCustomers(int countOfCustomers) {
-        Shop shop = new Shop(countOfCustomers, 3);
-        customers = new ArrayList<>();
-        for (int i = 0; i < shop.getCountOfCustomers(); i++) {
-            customers.add(new Customer(shop));
-        }
-    }
-
-    public boolean isFree() {
-        return isFree;
     }
 }

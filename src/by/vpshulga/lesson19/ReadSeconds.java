@@ -11,7 +11,11 @@ class ReadSeconds {
             int nextCountOfSeconds;
             do {
                 nextCountOfSeconds = sc.nextInt();
+                if (nextCountOfSeconds < 0){
+                    nextCountOfSeconds = -1;
+                }
                 final int sec = nextCountOfSeconds;
+
                 service.submit(() -> {
                     try {
                         Thread.sleep(1000 * sec);

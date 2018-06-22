@@ -3,7 +3,6 @@ package by.vpshulga.lesson18;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Random;
-import java.util.stream.Collectors;
 
 public class Customer implements Runnable {
     private int id;
@@ -32,6 +31,7 @@ public class Customer implements Runnable {
     public void run() {
         putGoodsInBasket();
         System.out.println("Customer`s " + id + " Basket: " + shoppingBasket);
+        goToQueue();
     }
 
     private synchronized void putGoodsInBasket() {
@@ -49,12 +49,16 @@ public class Customer implements Runnable {
             }
             Shop.getAvailableGoods().put(good, Shop.getAvailableGoods().get(good) - countOfGoods);
         }
-        if (shoppingBasket.values().stream().filter(i -> i > 0).collect(Collectors.toList()).size() == 0) {
-            isChooseSomething = false;
-            System.out.println("Customer " + id + " hadn`t chosen anything and left the shop");
-        } else {
-            Shop.getCustomers().add(this);
-            isChooseSomething = true;
+
+        if (!isChooseSomething){
+            System.out.println("Customer " + id + " didn't choose anything and left the shop");
+        }
+    }
+
+    private void goToQueue() {
+        if (isChooseSomething) {
+            System.out.println("Customer " + id + " stayed in queue");
+            Queue.getCustomersInQueue().add(this);
         }
     }
 

@@ -1,24 +1,22 @@
 package by.vpshulga.lesson18;
 
-import java.util.*;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Random;
+import java.util.Set;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 class Shop {
     private static Map<Good, Integer> availableGoods;
-    private static List<Customer> customers;
 
     static {
         fillMap();
     }
 
-    static List<Customer> getCustomers() {
-        return customers;
-    }
 
-    static synchronized void setCustomers() {
-        customers = new ArrayList<>();
-    }
+
+
 
     static Map<Good, Integer> getAvailableGoods() {
         return availableGoods;

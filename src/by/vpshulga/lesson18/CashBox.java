@@ -3,7 +3,6 @@ package by.vpshulga.lesson18;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
-import java.util.concurrent.Semaphore;
 
 public class CashBox implements Runnable {
     private int id;
@@ -12,11 +11,14 @@ public class CashBox implements Runnable {
     private double totalSum;
     private Customer customer;
     private List<Item> items;
-    private boolean isFree;
-    private static final Semaphore SEMAPHORE = new Semaphore(3, true);
+    private boolean isFree = true;
 
     CashBox() {
         id = ++counter;
+    }
+
+    int getId() {
+        return id;
     }
 
     private void setCustomer(Customer customer) {
@@ -25,24 +27,14 @@ public class CashBox implements Runnable {
 
     @Override
     public void run() {
-        while (Shop.getCustomers().size() > 0) {
-            try {
-                SEMAPHORE.acquire();
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
-            setCustomer(Shop.getCustomers().remove(0));
+        while (Queue.getCustomersInQueue().size() > 0) {
+            setCustomer(Queue.getCustomersInQueue().remove(0));
             serviceCustomer();
             takeReceipt();
-            System.out.println("Customer " + customer.getId() + " left the shop");
-            if (isFree) {
-                SEMAPHORE.release();
-            }
         }
     }
 
     private synchronized void serviceCustomer() {
-        isFree = false;
         items = new ArrayList<>();
         if (customer.isChooseSomething() && customer != null) {
             System.out.println("CashBox " + id + " services customer " + customer.getId());
@@ -70,10 +62,8 @@ public class CashBox implements Runnable {
 
     private synchronized void takeReceipt() {
         double paidSum = customer.pay(resultSum);
-        Receipt receipt = new Receipt(new Date(), customer, items, totalSum, resultSum, paidSum ,paidSum - resultSum);
-        System.out.println("Receipt for customer " + customer.getId());
+        Receipt receipt = new Receipt(new Date(), customer, items, totalSum, resultSum, paidSum, paidSum - resultSum);
         System.out.println(receipt);
         Item.setId(0);
-        isFree = true;
     }
 }

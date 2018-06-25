@@ -14,10 +14,6 @@ class Shop {
         fillMap();
     }
 
-
-
-
-
     static Map<Good, Integer> getAvailableGoods() {
         return availableGoods;
     }

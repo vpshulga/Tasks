@@ -16,10 +16,6 @@ class CashBox{
         id = ++counter;
     }
 
-    int getId() {
-        return id;
-    }
-
 
     synchronized void serviceCustomer(Customer customer) {
         items = new ArrayList<>();
@@ -30,9 +26,11 @@ class CashBox{
                 if (customer.getShoppingBasket().get(good) > 0) {
                     System.out.println("CashBox " + id + " Handle " + good + "(" + customer.getShoppingBasket().get(good)
                             + "pcs.) of Customer " + customer.getId());
+
                     totalSum += good.getPrice() * customer.getShoppingBasket().get(good);
                     resultSum += good.getPrice() * customer.getShoppingBasket().get(good)
                             - good.getPrice() * customer.getShoppingBasket().get(good) * good.getDiscount();
+
                     items.add(new Item(good, customer.getShoppingBasket().get(good), good.getPrice(), good.getDiscount()));
                 }
                 int timeToHandleGoods = 500 * customer.getShoppingBasket().get(good);

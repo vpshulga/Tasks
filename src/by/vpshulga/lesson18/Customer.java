@@ -76,6 +76,7 @@ public class Customer implements Runnable {
                     }
                 }
             }
+
             Queue.CASH_BOXES[cashBoxNumber].serviceCustomer(this);
             Queue.CASH_BOXES[cashBoxNumber].takeReceipt(this);
 

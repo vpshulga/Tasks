@@ -6,6 +6,7 @@ import java.util.concurrent.Executors;
 
 public class FindMaxInArrayTenThreads {
     static int findMax(){
+
         int[] array = FindMaxInArraySingleThread.fillArray();
         int[][] arrayOfArrays = new int[10][100000];
         int[] arrayOfMax = new int[10];
@@ -14,6 +15,7 @@ public class FindMaxInArrayTenThreads {
         }
 
         ExecutorService service = Executors.newFixedThreadPool(10);
+
         long start = System.nanoTime();
         for (int i = 0; i < arrayOfArrays.length; i++) {
             int finalI = i;

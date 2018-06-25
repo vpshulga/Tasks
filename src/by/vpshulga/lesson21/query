@@ -1,0 +1,37 @@
+USE countries;
+
+CREATE TABLE countries
+(
+  id INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
+  name VARCHAR(255),
+  population DECIMAL(10,5),
+  area DECIMAL(10,5),
+  national_language VARCHAR(255)
+);
+
+INSERT INTO countries (name, population, area, national_language) VALUES ('Belarus', 9.4984, 207.595, 'Belorussian');
+INSERT INTO countries (name, population, area, national_language) VALUES ('Egypt', 91.70172, 1001.450, 'Egyptian');
+INSERT INTO countries (name, population, area, national_language) VALUES ('Saudi Arabia', 31.016, 2218.0, 'Arab');
+INSERT INTO countries (name, population, area, national_language) VALUES ('Russia', 146.5447, 17102.345, 'Russian');
+INSERT INTO countries (name, population, area, national_language) VALUES ('Uruguay', 3.48022 , 176.220, 'Spanish');
+INSERT INTO countries (name, population, area, national_language) VALUES ('Iran', 80.4984, 1648.0, 'Persian');
+INSERT INTO countries (name, population, area, national_language) VALUES ('Morocco', 34.817, 446.590, 'Arab');
+INSERT INTO countries (name, population, area, national_language) VALUES ('Spain', 46.438, 497.304, 'Spanish');
+INSERT INTO countries (name, population, area, national_language) VALUES ('Portugal', 10.341, 92.082, 'Portuguese');
+INSERT INTO countries (name, population, area, national_language) VALUES ('France', 64.513, 547.030, 'French');
+INSERT INTO countries (name, population, area, national_language) VALUES ('Denmark', 5.70725, 43.094, 'Danish');
+INSERT INTO countries (name, population, area, national_language) VALUES ('Australia', 24.23861, 7686.850, 'Australian English');
+
+SELECT * FROM countries WHERE population > 50;
+
+SELECT * FROM countries ORDER BY population;
+
+SELECT * FROM countries ORDER BY area LIMIT 5;
+
+SELECT SUM(population) AS "Total" FROM (SELECT * FROM countries ORDER BY area LIMIT 5) AS a1;
+
+UPDATE countries SET national_language = 'Russian' WHERE id = 1;
+
+DELETE FROM countries ORDER BY population DESC LIMIT 1;
+
+

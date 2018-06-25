@@ -1,0 +1,12 @@
+INSERT INTO countries.countries (name, population, area, national_language) VALUES ('Belarus', 9.49840, 207.59500, 'Russian');
+INSERT INTO countries.countries (name, population, area, national_language) VALUES ('Egypt', 91.70172, 1001.45000, 'Egyptian');
+INSERT INTO countries.countries (name, population, area, national_language) VALUES ('Saudi Arabia', 31.01600, 2218.00000, 'Arab');
+INSERT INTO countries.countries (name, population, area, national_language) VALUES ('Uruguay', 3.48022, 176.22000, 'Spanish');
+INSERT INTO countries.countries (name, population, area, national_language) VALUES ('Iran', 80.49840, 1648.00000, 'Persian');
+INSERT INTO countries.countries (name, population, area, national_language) VALUES ('Morocco', 34.81700, 446.59000, 'Arab');
+INSERT INTO countries.countries (name, population, area, national_language) VALUES ('Spain', 46.43800, 497.30400, 'Spanish');
+INSERT INTO countries.countries (name, population, area, national_language) VALUES ('Portugal', 10.34100, 92.08200, 'Portuguese');
+INSERT INTO countries.countries (name, population, area, national_language) VALUES ('France', 64.51300, 547.03000, 'French');
+INSERT INTO countries.countries (name, population, area, national_language) VALUES ('Denmark', 5.70725, 43.09400, 'Danish');
+INSERT INTO countries.countries (name, population, area, national_language) VALUES ('Australia', 24.23861, 7686.85000, 'Australian English');
+INSERT INTO countries.countries (name, population, area, national_language) VALUES ('Russia', 146.54470, 17102.34500, 'Russian');

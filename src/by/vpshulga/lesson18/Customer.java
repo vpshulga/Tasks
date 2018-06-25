@@ -3,8 +3,10 @@ package by.vpshulga.lesson18;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Random;
+import java.util.concurrent.Semaphore;
 
 public class Customer implements Runnable {
+    private static final Semaphore SEMAPHORE = new Semaphore(3, true);
     private int id;
     private static int counter;
     private Map<Good, Integer> shoppingBasket;
@@ -31,7 +33,7 @@ public class Customer implements Runnable {
     public void run() {
         putGoodsInBasket();
         System.out.println("Customer`s " + id + " Basket: " + shoppingBasket);
-        goToQueue();
+        goToCashBox();
     }
 
     private synchronized void putGoodsInBasket() {
@@ -55,10 +57,33 @@ public class Customer implements Runnable {
         }
     }
 
-    private void goToQueue() {
+    private void goToCashBox() {
+        int cashBoxNumber = -1;
         if (isChooseSomething) {
             System.out.println("Customer " + id + " stayed in queue");
-            Queue.getCustomersInQueue().add(this);
+            try {
+                SEMAPHORE.acquire();
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+            synchronized (Queue.CASH_BOXES){
+                for (int i = 0; i < Queue.CASH_BOXES.length; i++) {
+                    if (Queue.CASH_BOXES[i].isFree){
+                        cashBoxNumber = i;
+                        Queue.CASH_BOXES[i].isFree = false;
+                        System.out.println("Customer " + id + " goes to CashBox number " + (i + 1));
+                        break;
+                    }
+                }
+            }
+            Queue.CASH_BOXES[cashBoxNumber].serviceCustomer(this);
+            Queue.CASH_BOXES[cashBoxNumber].takeReceipt(this);
+
+            synchronized (Queue.CASH_BOXES){
+                Queue.CASH_BOXES[cashBoxNumber].isFree = true;
+            }
+            SEMAPHORE.release();
+            System.out.println("Customer " + id + " left the shop.");
         }
     }
 

@@ -32,7 +32,7 @@ SELECT SUM(population) AS "Total" FROM (SELECT * FROM countries ORDER BY area LI
 
 UPDATE countries SET national_language = 'Russian' WHERE id = 1;
 
-DELETE FROM countries ORDER BY population DESC LIMIT 1;
+DELETE FROM countries WHERE population = (SELECT * FROM (SELECT MAX(population) FROM countries) AS a1);
 
 
 

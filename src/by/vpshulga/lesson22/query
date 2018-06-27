@@ -1,0 +1,106 @@
+USE library_22;
+
+INSERT INTO authors (name, surname, birthday, nationality) VALUES ('Sergey', 'Esenin', '1985-09-21', 'Russia');
+INSERT INTO authors (name, surname, birthday, nationality) VALUES ('Alex', 'Pushkin', '1799-05-26', 'Russia');
+INSERT INTO authors (name, surname, birthday, nationality) VALUES ('Ray', 'Bradbury', '1920-08-22', 'USA');
+INSERT INTO authors (name, surname, birthday, nationality) VALUES ('Jules', 'Verne', '1828-02-08', 'France');
+INSERT INTO authors (name, surname, birthday, nationality) VALUES ('Jakub', 'Kolas', '1882-10-22', 'Belarus');
+INSERT INTO authors (name, surname, birthday, nationality) VALUES ('William', 'Shakespeare', '1564-04-26', 'England');
+
+SELECT * FROM authors;
+
+INSERT INTO books (name, pages_count, genre) VALUES ('Radunica', 255 , 'poetry');
+INSERT INTO books (name, pages_count,  genre) VALUES ('The Tale of the Fisherman and the Fish',  399 ,'Fairy tale' );
+INSERT INTO books (name, pages_count,  genre) VALUES ('Fahrenheit 451', 126 ,'science fiction');
+INSERT INTO books (name, pages_count,  genre) VALUES ('A journey to the center of the earth', 397, 'science fiction');
+INSERT INTO books (name, pages_count,  genre) VALUES ('All summer in a day', 82 ,'science fiction');
+INSERT INTO books (name, pages_count,  genre) VALUES ('Pugachev', 231 ,'poetry');
+INSERT INTO books (name, pages_count,  genre) VALUES ('Na rosstaniah', 308 ,'novel');
+INSERT INTO books (name, pages_count,  genre) VALUES ('Dubrovsky', 116 ,'novel');
+INSERT INTO books (name, pages_count,  genre) VALUES ('Around the world in 80 Days', 502 ,'adventure novel');
+INSERT INTO books (name, pages_count,  genre) VALUES ('Romeo and Juliet', 364 ,'poetry');
+INSERT INTO books (name, pages_count,  genre) VALUES ('Hamlet', 412 , 'poetry');
+INSERT INTO books (name, pages_count,  genre) VALUES ('Golas ziamli', 234 ,'poetry');
+
+SELECT * FROM books;
+
+INSERT INTO authors_books (author_id, book_id) VALUES (1 , 1);
+INSERT INTO authors_books (author_id, book_id) VALUES (1 , 6);
+INSERT INTO authors_books (author_id, book_id) VALUES (2 , 2);
+INSERT INTO authors_books (author_id, book_id) VALUES (2 , 6);
+INSERT INTO authors_books (author_id, book_id) VALUES (2 , 8);
+INSERT INTO authors_books (author_id, book_id) VALUES (3 , 3);
+INSERT INTO authors_books (author_id, book_id) VALUES (3 , 5);
+INSERT INTO authors_books (author_id, book_id) VALUES (4 , 3);
+INSERT INTO authors_books (author_id, book_id) VALUES (4 , 4);
+INSERT INTO authors_books (author_id, book_id) VALUES (4 , 9);
+INSERT INTO authors_books (author_id, book_id) VALUES (5 , 7);
+INSERT INTO authors_books (author_id, book_id) VALUES (5 , 12);
+INSERT INTO authors_books (author_id, book_id) VALUES (6 , 10);
+INSERT INTO authors_books (author_id, book_id) VALUES (6 , 11);
+
+/*
+1.	Выбрать из базы данных имена авторов с названиями написанных ими книг.
+          Назвать поля результирующей таблицы book_author и book_name.
+
+ */
+SELECT a.name AS book_autor_name, a.surname AS book_autor_surname, GROUP_CONCAT( b.name SEPARATOR '|||')AS books_names
+  FROM authors a
+  INNER JOIN authors_books ab ON a.id = ab.author_id
+  INNER JOIN books b ON ab.book_id = b.id
+  GROUP BY a.name;
+
+/*
+2.	Выбрать из таблицы все книги авторов выбранной национальности.
+ */
+SELECT DISTINCT b.name FROM books b
+  INNER JOIN authors_books ab ON b.id = ab.book_id
+  INNER JOIN authors a ON a.id = ab.author_id WHERE a.nationality = 'Russia';
+
+/*
+3.	Выбрать из таблицы все книги, авторы которых родились после 1900 года.
+ */
+SELECT DISTINCT b.name FROM books b
+  INNER JOIN authors_books ab ON b.id = ab.book_id
+  INNER JOIN authors a ON a.id = ab.author_id WHERE a.birthday > '1900-01-01';
+
+/*
+4.	Удалить из таблицы данных книгу с заданным названием.
+ */
+DELETE FROM books WHERE books.name = 'Radunica';
+
+/*
+5.	Выбрать из таблицы: имя автора,
+национальность и среднее количество написанных им страниц, упорядочить по году рождения автора.
+ */
+SELECT a.name, a.surname, cast(AVG(b.pages_count) AS DECIMAL(5,2)) AS avg
+FROM authors a
+INNER JOIN authors_books ab ON a.id = ab.author_id
+INNER JOIN books b ON b.id = ab.book_id GROUP BY a.name ORDER BY a.birthday;
+
+/*
+6.	Выбрать из таблицы: имя автора,
+ национальность и среднее количество написанных им страниц, где среднее число страниц больше 300.
+ */
+SELECT a.name, a.surname, a.nationality , cast(AVG(b.pages_count) AS DECIMAL(5,2)) AS avg
+FROM authors a
+INNER JOIN authors_books ab ON a.id = ab.author_id
+INNER JOIN books b ON b.id = ab.book_id GROUP BY a.name HAVING AVG(b.pages_count) > 300;
+
+/*
+     7.* Выбрать из таблицы данные в виде: автор, ср. число страниц для всех авторов,
+      среднее количество написанных страниц которых выше среднего количества страниц, написанных всеми авторами.
+ */
+SELECT a.name, a.surname, (SELECT  cast(AVG(b.pages_count) AS DECIMAL(5,2)) AS avg
+                           FROM authors a
+                           INNER JOIN authors_books ab ON a.id = ab.author_id
+                           INNER JOIN books b ON b.id = ab.book_id) as avg,
+   cast(AVG(b.pages_count) AS DECIMAL(5,2)) AS avg_per_author
+FROM authors a
+  INNER JOIN authors_books ab ON a.id = ab.author_id
+  INNER JOIN books b ON b.id = ab.book_id GROUP BY a.name HAVING avg_per_author > avg;
+
+
+
+
+

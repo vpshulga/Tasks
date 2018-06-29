@@ -3,6 +3,7 @@ package by.vpshulga.lesson23;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
+import java.util.Locale;
 import java.util.ResourceBundle;
 
 public class ConnectorManager {
@@ -13,7 +14,7 @@ public class ConnectorManager {
     private static final String PASSWORD;
 
     static {
-        ResourceBundle rb = ResourceBundle.getBundle("resources/db");
+        ResourceBundle rb = ResourceBundle.getBundle("db");
         if (rb == null) {
             URL = "UNDEFINED";
             USER = "UNDEFINED";

@@ -1,9 +1,8 @@
-package by.vpshulga.lesson23;
+package by.vpshulga.lesson24.db;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
-import java.util.Locale;
 import java.util.ResourceBundle;
 
 public class ConnectorManager {

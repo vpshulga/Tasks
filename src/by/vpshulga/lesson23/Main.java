@@ -1,5 +1,7 @@
 package by.vpshulga.lesson23;
 
+import by.vpshulga.lesson24.db.ConnectorManager;
+
 import java.sql.*;
 
 public class Main {

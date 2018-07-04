@@ -75,7 +75,7 @@ public class Patient extends Person {
     @Override
     public String toString() {
         return this.getFirstName() + " " + getLastName() + " " + this.getAge() + " "
-                + this.getSex() + " " +  this.getCity() + " " + this.getStreet() + " "
+                + this.getSex() + " " + this.getCity() + " " + this.getStreet() + " "
                 + this.getHouse() + " " + this.getApartment() + "(" + this.getComplaint() + ")";
     }
 }

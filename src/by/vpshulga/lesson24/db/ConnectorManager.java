@@ -40,7 +40,7 @@ public class ConnectorManager {
         try {
             return DriverManager.getConnection(URL, USER, PASSWORD);
         } catch (SQLException e) {
-            throw new DbManagerException("Ошибка получения соединения " +  e.getMessage());
+            throw new DbManagerException("Ошибка получения соединения " + e.getMessage());
         }
     }
 

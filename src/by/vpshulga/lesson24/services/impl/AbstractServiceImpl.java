@@ -13,7 +13,7 @@ public abstract class AbstractServiceImpl {
 
     public void commit() {
         try {
-            if (!connection.getAutoCommit()){
+            if (!connection.getAutoCommit()) {
                 connection.commit();
             }
         } catch (SQLException e) {

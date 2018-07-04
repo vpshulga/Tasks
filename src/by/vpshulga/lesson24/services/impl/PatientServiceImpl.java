@@ -51,7 +51,7 @@ public class PatientServiceImpl extends AbstractServiceImpl implements PatientSe
         int countDeletedRows = 0;
         try {
             startTransaction();
-            countDeletedRows =  patientDAO.delete(id);
+            countDeletedRows = patientDAO.delete(id);
         } catch (SQLException e) {
             e.printStackTrace();
         }

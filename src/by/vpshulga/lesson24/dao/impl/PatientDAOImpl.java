@@ -90,7 +90,7 @@ public class PatientDAOImpl implements PatientDAO {
         psPatientSave.setString(6, patient.getComplaint());
         psPatientSave.executeUpdate();
         ResultSet rs1 = psPatientSave.getGeneratedKeys();
-        if (rs1.next()){
+        if (rs1.next()) {
             patient.setId(rs1.getInt(1));
         }
 
@@ -102,14 +102,14 @@ public class PatientDAOImpl implements PatientDAO {
     @Override
     public Patient get(Serializable id) throws SQLException {
         Patient patient = new Patient();
-        psPatientGet.setInt(1, (int)id);
+        psPatientGet.setInt(1, (int) id);
         psPatientGet.executeQuery();
         ResultSet rs = psPatientGet.getResultSet();
-        if (rs.next()){
+        if (rs.next()) {
             psAddressGet.setInt(1, rs.getInt(6));
             psAddressGet.executeQuery();
             ResultSet rs1 = psAddressGet.getResultSet();
-            if (rs1.next()){
+            if (rs1.next()) {
                 patient.setFirstName(rs.getString(2));
                 patient.setLastName(rs.getString(3));
                 patient.setAge(rs.getInt(4));
@@ -140,7 +140,7 @@ public class PatientDAOImpl implements PatientDAO {
         psPatientGet.setInt(1, patient.getId());
 
         ResultSet rs = psPatientGet.executeQuery();
-        if (rs.next()){
+        if (rs.next()) {
             psAddressUpdate.setInt(5, rs.getInt(6));
             psAddressUpdate.setString(1, patient.getCity());
             psAddressUpdate.setString(2, patient.getStreet());
@@ -157,7 +157,7 @@ public class PatientDAOImpl implements PatientDAO {
         int patientRows = 0;
         psPatientGet.setInt(1, (int) id);
         ResultSet rs = psPatientGet.executeQuery();
-        if (rs.next()){
+        if (rs.next()) {
 
             psPatientDelete.setInt(1, (int) id);
             patientRows = psPatientDelete.executeUpdate();

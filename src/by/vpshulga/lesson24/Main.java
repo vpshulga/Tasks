@@ -1,18 +1,18 @@
 package by.vpshulga.lesson24;
 
-import by.vpshulga.lesson24.dao.impl.PatientDAOImpl;
 import by.vpshulga.lesson24.entities.Patient;
 import by.vpshulga.lesson24.enums.Sex;
-
-import java.sql.SQLException;
+import by.vpshulga.lesson24.services.impl.PatientServiceImpl;
 
 public class Main {
     public static void main(String[] args) {
-        try {
-            PatientDAOImpl.getInstance().save(new Patient("stas", "mikhailov", 22, Sex.FEMALE,
-                    "Minsk", "Gintovta", 83, 96, "bolit zhopa"));
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
+        PatientServiceImpl psi = new PatientServiceImpl();
+        Patient savedPatient = new Patient("Vladimir", "Putin", 65, Sex.UNDEFINED,
+                "Moscow", "Lubianka", 1, 1, "Ustal");
+        Patient newPatient = psi.save(savedPatient);
+        System.out.println(psi.get(newPatient.getId()));
+        newPatient.setFirstName("Alexander");
+        psi.update(newPatient);
+        psi.delete(newPatient.getId() - 1);
     }
 }

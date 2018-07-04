@@ -9,6 +9,9 @@ public abstract class Person {
     private int age;
     private Sex sex;
 
+    public Person() {
+    }
+
     public Person(String firstName, String secondName, int age, Sex sex) {
         this.firstName = firstName;
         this.lastName = secondName;

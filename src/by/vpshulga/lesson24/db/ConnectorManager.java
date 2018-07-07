@@ -6,11 +6,11 @@ import java.sql.SQLException;
 import java.util.ResourceBundle;
 
 public class ConnectorManager {
-    private static ResourceBundle rb = null;
     private static volatile boolean isDriverLoaded = false;
     private static final String URL;
     private static final String USER;
     private static final String PASSWORD;
+    private static Connection con;
 
     static {
         ResourceBundle rb = ResourceBundle.getBundle("db");
@@ -38,7 +38,10 @@ public class ConnectorManager {
         }
 
         try {
-            return DriverManager.getConnection(URL, USER, PASSWORD);
+            if (con == null) {
+                con = DriverManager.getConnection(URL, USER, PASSWORD);
+            }
+            return con;
         } catch (SQLException e) {
             throw new DbManagerException("Ошибка получения соединения " + e.getMessage());
         }

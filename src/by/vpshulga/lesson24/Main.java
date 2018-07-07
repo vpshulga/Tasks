@@ -13,6 +13,6 @@ public class Main {
         System.out.println(psi.get(newPatient.getId()));
         newPatient.setFirstName("Alexander");
         psi.update(newPatient);
-        psi.delete(newPatient.getId() - 1);
+        psi.delete(58);
     }
 }

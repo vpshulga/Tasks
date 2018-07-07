@@ -6,12 +6,11 @@ import by.vpshulga.lesson24.entities.Patient;
 
 import by.vpshulga.lesson24.enums.Sex;
 import java.io.Serializable;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
+import java.sql.*;
 
 public class PatientDAOImpl implements PatientDAO {
+
+    private static Connection connection;
 
     private static volatile PatientDAO INSTANCE = null;
     private static final String savePatientQuery = "INSERT INTO patients (first_name, last_name, age, sex, address, complaint) VALUES (?, ?, ?, ?, ?, ?)";
@@ -41,17 +40,18 @@ public class PatientDAOImpl implements PatientDAO {
 
     {
         try {
-            psAddressSave = ConnectorManager.getConnection().prepareStatement(saveAddressQuery, Statement.RETURN_GENERATED_KEYS);
+            connection = ConnectorManager.getConnection();
+            psAddressSave = connection.prepareStatement(saveAddressQuery, Statement.RETURN_GENERATED_KEYS);
             psPatientSave = ConnectorManager.getConnection().prepareStatement(savePatientQuery, Statement.RETURN_GENERATED_KEYS);
 
-            psPatientUpdate = ConnectorManager.getConnection().prepareStatement(updatePatientQuery);
+            psPatientUpdate = connection.prepareStatement(updatePatientQuery);
             psAddressUpdate = ConnectorManager.getConnection().prepareStatement(updateAddressQuery, Statement.RETURN_GENERATED_KEYS);
 
-            psPatientGet = ConnectorManager.getConnection().prepareStatement(getPatientQuery);
-            psAddressGet = ConnectorManager.getConnection().prepareStatement(getAddressQuery);
+            psPatientGet = connection.prepareStatement(getPatientQuery);
+            psAddressGet = connection.prepareStatement(getAddressQuery);
 
-            psPatientDelete = ConnectorManager.getConnection().prepareStatement(deletePatientQuery);
-            psAddressDelete = ConnectorManager.getConnection().prepareStatement(deleteAddressQuery);
+            psPatientDelete = connection.prepareStatement(deletePatientQuery);
+            psAddressDelete = connection.prepareStatement(deleteAddressQuery);
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -169,8 +169,10 @@ public class PatientDAOImpl implements PatientDAO {
 
     private static void close(ResultSet rs) {
         try {
-            if (rs != null)
+            if (rs != null) {
                 rs.close();
+            }
+
         } catch (SQLException e) {
             e.printStackTrace();
         }
